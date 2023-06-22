@@ -2,7 +2,7 @@
 
 <div>
     <label>Enter Length</label>
-    <input/>
+    <input (input)="onChangeLength($event)"/>
 </div>
 
 <div>
@@ -12,7 +12,7 @@
 
 <div>
     <label>Use Numbers</label>
-    <input (change)="onChangeUseNumber()" type="checkbox" />
+    <input (change)="onChangeUseNumbers()" type="checkbox" />
 </div>
 
 <div>
@@ -26,5 +26,5 @@
 
 <div>
     <label>Your Password</label>
-    <input />
+    <input [value]="password"/>
 </div>
