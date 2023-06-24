@@ -1,0 +1,12 @@
+/* Card Component CSS */
+card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* 
+    If app.component implement this then it will work
+    host {
+        display:flex;
+    }
+*/
