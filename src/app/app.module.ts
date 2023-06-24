@@ -5,12 +5,14 @@ import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PasswordGeneratorComponent } from './projects/password-generator/password-generator.component';
 import { CardsComponent } from './projects/cards/cards.component';
+import { CardComponent } from './projects/cards/card/card.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         PasswordGeneratorComponent,
-        CardsComponent
+        CardsComponent,
+        CardComponent
         
     ],
     imports: [
