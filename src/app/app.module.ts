@@ -4,11 +4,13 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PasswordGeneratorComponent } from './projects/password-generator/password-generator.component';
+import { CardsComponent } from './projects/cards/cards.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        PasswordGeneratorComponent
+        PasswordGeneratorComponent,
+        CardsComponent
         
     ],
     imports: [
