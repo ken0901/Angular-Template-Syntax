@@ -1,16 +1,16 @@
-<div class="card">
+<div class="card" *ngFor="let post of posts">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img [src]="imageUrl"/>
+        <img [src]="post.imageUrl"/>
       </figure>
     </div>
     <div class="card-content">
         <div class="media-content">
-          <p class="title is-4">{{title}}</p>
-          <p class="subtitle is-6">@{{username}}</p>
+          <p class="title is-4">{{post.title}}</p>
+          <p class="subtitle is-6">@{{post.username}}</p>
         </div>
         <div class="content">
-            {{content}}
+            {{post.content}}
         </div>
     </div>
 </div>
