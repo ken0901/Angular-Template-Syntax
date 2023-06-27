@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { PasswordGeneratorComponent } from './projects/password-generator/password-generator.component';
 import { CardsComponent } from './projects/cards/cards.component';
 import { CardComponent } from './projects/cards/card/card.component';
+import { TypingChallengeComponent } from './projects/typing-challenge/typing-challenge.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         PasswordGeneratorComponent,
         CardsComponent,
-        CardComponent
+        CardComponent,
+        TypingChallengeComponent
         
     ],
     imports: [
