@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faker } from "@faker-js/faker";
 
 @Component({
   selector: 'project-typing-challenge',
