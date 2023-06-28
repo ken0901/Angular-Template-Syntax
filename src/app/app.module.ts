@@ -8,6 +8,7 @@ import { CardsComponent } from './projects/cards/cards.component';
 import { CardComponent } from './projects/cards/card/card.component';
 import { TypingChallengeComponent } from './projects/typing-challenge/typing-challenge.component';
 import { PipesComponent } from './projects/pipes/pipes.component';
+import { ConvertPipe } from './projects/pipes/convert.pipe';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { PipesComponent } from './projects/pipes/pipes.component';
         CardsComponent,
         CardComponent,
         TypingChallengeComponent,
-        PipesComponent
+        PipesComponent,
+        ConvertPipe
         
     ],
     imports: [

@@ -10,6 +10,7 @@ export class PipesComponent implements OnInit {
   date: string;
   amount: number;
   height: number;
+  miles: number;
 
   car = {
     make: 'Toyota',
@@ -40,5 +41,10 @@ export class PipesComponent implements OnInit {
   onHeightChange(event: Event){
     const target = event.target as HTMLInputElement;
     this.height = parseFloat(target.value);
+  }
+
+  onMilesChange(event: Event){
+    const target = event.target as HTMLInputElement;
+    this.miles = parseFloat(target.value);
   }
 }
