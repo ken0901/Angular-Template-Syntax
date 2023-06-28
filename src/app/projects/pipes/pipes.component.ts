@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class PipesComponent implements OnInit {
   name: string;
   date: string;
+  amount: number;
+  height: number;
 
   constructor() { }
 
@@ -24,4 +26,13 @@ export class PipesComponent implements OnInit {
     this.date = target.value;
   }
 
+  onAmountchange(event: Event){
+    const target = event.target as HTMLInputElement;
+    this.amount = parseFloat(target.value);
+  }
+
+  onHeightChange(event: Event){
+    const target = event.target as HTMLInputElement;
+    this.height = parseFloat(target.value);
+  }
 }

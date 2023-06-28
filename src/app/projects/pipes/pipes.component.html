@@ -6,6 +6,7 @@
             <label>Payee Name</label>
             <input (input)="onNameChange($event)" />
         </div>
+
         <div class="col">
             <label><b>Name</b></label>
             <div>
@@ -19,10 +20,39 @@
             <label>Payment Date</label>
             <input type="date" class="form-control" (input)="onDateChange($event)" />
         </div>
+
         <div class="col">
             <label><b>Payment Date</b></label>
             <div>
                 {{ date | date: 'MMMM d, y' }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            <label>Payment Amount</label>
+            <input type="number" class="form-control" (input)="onAmountchange($event)" />
+        </div>
+
+        <div class="col">
+            <label><b>Payment Amount</b></label>
+            <div>
+                {{ amount | currency }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            <label>Height</label>
+            <input type="number" class="form-control" (input)="onHeightChange($event)" />
+        </div>
+
+        <div class="col">
+            <label><b>Height</b></label>
+            <div>
+                {{ height | number: '1.1-3'}}
             </div>
         </div>
     </div>
