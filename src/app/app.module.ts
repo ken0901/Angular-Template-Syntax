@@ -7,6 +7,7 @@ import { PasswordGeneratorComponent } from './projects/password-generator/passwo
 import { CardsComponent } from './projects/cards/cards.component';
 import { CardComponent } from './projects/cards/card/card.component';
 import { TypingChallengeComponent } from './projects/typing-challenge/typing-challenge.component';
+import { PipesComponent } from './projects/pipes/pipes.component';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { TypingChallengeComponent } from './projects/typing-challenge/typing-cha
         PasswordGeneratorComponent,
         CardsComponent,
         CardComponent,
-        TypingChallengeComponent
+        TypingChallengeComponent,
+        PipesComponent
         
     ],
     imports: [
