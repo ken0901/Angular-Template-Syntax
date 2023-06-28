@@ -11,6 +11,12 @@ export class PipesComponent implements OnInit {
   amount: number;
   height: number;
 
+  car = {
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2000
+  }
+
   constructor() { }
 
   ngOnInit(): void {
