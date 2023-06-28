@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesComponent implements OnInit {
   name: string;
+  date: string;
 
   constructor() { }
 
@@ -16,6 +17,11 @@ export class PipesComponent implements OnInit {
   onNameChange(event: Event){
     const target = event.target as HTMLInputElement;
     this.name = target.value;
+  }
+
+  onDateChange(event: Event){
+    const target = event.target as HTMLInputElement;
+    this.date = target.value;
   }
 
 }
