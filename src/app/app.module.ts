@@ -10,6 +10,7 @@ import { TypingChallengeComponent } from './projects/typing-challenge/typing-cha
 import { PipesComponent } from './projects/pipes/pipes.component';
 import { ConvertPipe } from './projects/pipes/convert.pipe';
 import { DirectivesComponent } from './projects/directives/directives.component';
+import { ClassDirective } from './projects/directives/class.directive';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { DirectivesComponent } from './projects/directives/directives.component'
         TypingChallengeComponent,
         PipesComponent,
         ConvertPipe,
-        DirectivesComponent
+        DirectivesComponent,
+        ClassDirective
         
     ],
     imports: [
