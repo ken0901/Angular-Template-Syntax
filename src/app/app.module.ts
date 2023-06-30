@@ -13,6 +13,7 @@ import { DirectivesComponent } from './projects/directives/directives.component'
 import { ClassDirective } from './projects/directives/class.directive';
 import { TimesDirective } from './projects/directives/times.directive';
 import { ModuleProjectComponent } from './projects/module-project/module-project.component';
+import { ElementsModule } from './projects/module-project/module/elements/elements.module';
 
 @NgModule({
     declarations: [
@@ -26,12 +27,13 @@ import { ModuleProjectComponent } from './projects/module-project/module-project
         DirectivesComponent,
         ClassDirective,
         TimesDirective,
-        ModuleProjectComponent
+        ModuleProjectComponent,
         
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ElementsModule
        
     ],
     providers: [
