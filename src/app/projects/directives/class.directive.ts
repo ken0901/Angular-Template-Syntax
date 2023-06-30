@@ -15,7 +15,7 @@ export class ClassDirective {
     // }, 50);
    }
 
-   @Input() set backgroundColor(color: string){
+   @Input('appClass') set backgroundColor(color: string){
     this.element.nativeElement.style.backgroundColor = color;
    }
 
