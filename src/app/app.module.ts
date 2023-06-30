@@ -11,6 +11,7 @@ import { PipesComponent } from './projects/pipes/pipes.component';
 import { ConvertPipe } from './projects/pipes/convert.pipe';
 import { DirectivesComponent } from './projects/directives/directives.component';
 import { ClassDirective } from './projects/directives/class.directive';
+import { TimesDirective } from './projects/directives/times.directive';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { ClassDirective } from './projects/directives/class.directive';
         PipesComponent,
         ConvertPipe,
         DirectivesComponent,
-        ClassDirective
+        ClassDirective,
+        TimesDirective
         
     ],
     imports: [
