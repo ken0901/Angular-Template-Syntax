@@ -6,7 +6,8 @@
         >
             <a (click)="currentPage = currentPage - 1" class="page-link">Prev</a>
         </li>
-        <ng-container *ngFor="let image of images; let i = index;">
+        <!-- <ng-container *ngFor="let image of images; let i = index;"> -->
+        <ng-container *appTimes="images.length; let i = index">
             <li 
                 class="page-item" 
                 [appClass]="{ active: i === currentPage}"
