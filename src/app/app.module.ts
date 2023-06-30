@@ -14,6 +14,7 @@ import { ClassDirective } from './projects/directives/class.directive';
 import { TimesDirective } from './projects/directives/times.directive';
 import { ModuleProjectComponent } from './projects/module-project/module-project.component';
 import { ElementsModule } from './projects/module-project/module/elements/elements.module';
+import { CollectionsModule } from './projects/module-project/module/collections/collections.module';
 
 @NgModule({
     declarations: [
@@ -28,12 +29,12 @@ import { ElementsModule } from './projects/module-project/module/elements/elemen
         ClassDirective,
         TimesDirective,
         ModuleProjectComponent,
-        
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        ElementsModule
+        ElementsModule,
+        CollectionsModule
        
     ],
     providers: [
