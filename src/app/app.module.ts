@@ -13,7 +13,6 @@ import { DirectivesComponent } from './projects/directives/directives.component'
 import { ClassDirective } from './projects/directives/class.directive';
 import { TimesDirective } from './projects/directives/times.directive';
 import { ModuleProjectComponent } from './projects/module-project/module-project.component';
-import { CollectionsModule } from './projects/module-project/module/collections/collections.module';
 import { HomeComponent } from './projects/module-project/components/home/home.component';
 import { NotFoundComponent } from './projects/module-project/components/not-found/not-found.component';
 

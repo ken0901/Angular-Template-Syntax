@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { ElementsRoutingModule } from './elements-routing.module';
 import { ElementsHomeComponent } from '../../components/elements-home/elements-home.component';
+import { PlaceholderComponent } from '../../components/placeholder/placeholder.component';
 
 
 @NgModule({
-  declarations: [ElementsHomeComponent],
+  declarations: [
+    ElementsHomeComponent,
+    PlaceholderComponent
+  ],
   imports: [
     CommonModule,
     ElementsRoutingModule
