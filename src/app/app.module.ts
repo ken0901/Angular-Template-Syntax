@@ -38,11 +38,9 @@ import { CollectionsRoutingModule } from './projects/module-project/module/colle
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
-        ElementsRoutingModule,
         ElementsModule,
         CollectionsModule,
-        CollectionsRoutingModule
+        AppRoutingModule,
        
     ],
     providers: [
