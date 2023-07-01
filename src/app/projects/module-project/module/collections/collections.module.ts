@@ -11,6 +11,6 @@ import { CollectionsHomeComponent } from '../../components/collections-home/coll
     CommonModule,
     CollectionsRoutingModule
   ],
-  exports: [CollectionsHomeComponent]
+  exports: []
 })
 export class CollectionsModule { }
