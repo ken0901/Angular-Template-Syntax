@@ -15,6 +15,10 @@ import { TimesDirective } from './projects/directives/times.directive';
 import { ModuleProjectComponent } from './projects/module-project/module-project.component';
 import { ElementsModule } from './projects/module-project/module/elements/elements.module';
 import { CollectionsModule } from './projects/module-project/module/collections/collections.module';
+import { HomeComponent } from './projects/module-project/components/home/home.component';
+import { NotFoundComponent } from './projects/module-project/components/not-found/not-found.component';
+import { ElementsRoutingModule } from './projects/module-project/module/elements/elements-routing.module';
+import { CollectionsRoutingModule } from './projects/module-project/module/collections/collections-routing.module';
 
 @NgModule({
     declarations: [
@@ -29,12 +33,16 @@ import { CollectionsModule } from './projects/module-project/module/collections/
         ClassDirective,
         TimesDirective,
         ModuleProjectComponent,
+        HomeComponent,
+        NotFoundComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        ElementsRoutingModule,
         ElementsModule,
-        CollectionsModule
+        CollectionsModule,
+        CollectionsRoutingModule
        
     ],
     providers: [
