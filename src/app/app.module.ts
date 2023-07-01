@@ -13,12 +13,9 @@ import { DirectivesComponent } from './projects/directives/directives.component'
 import { ClassDirective } from './projects/directives/class.directive';
 import { TimesDirective } from './projects/directives/times.directive';
 import { ModuleProjectComponent } from './projects/module-project/module-project.component';
-import { ElementsModule } from './projects/module-project/module/elements/elements.module';
 import { CollectionsModule } from './projects/module-project/module/collections/collections.module';
 import { HomeComponent } from './projects/module-project/components/home/home.component';
 import { NotFoundComponent } from './projects/module-project/components/not-found/not-found.component';
-import { ElementsRoutingModule } from './projects/module-project/module/elements/elements-routing.module';
-import { CollectionsRoutingModule } from './projects/module-project/module/collections/collections-routing.module';
 
 @NgModule({
     declarations: [
@@ -38,10 +35,7 @@ import { CollectionsRoutingModule } from './projects/module-project/module/colle
     ],
     imports: [
         BrowserModule,
-        ElementsModule,
-        CollectionsModule,
         AppRoutingModule,
-       
     ],
     providers: [
     ],
