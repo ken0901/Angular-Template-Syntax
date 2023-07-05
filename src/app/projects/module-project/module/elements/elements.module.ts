@@ -6,13 +6,15 @@ import { ElementsHomeComponent } from '../../components/elements-home/elements-h
 import { PlaceholderComponent } from '../../components/placeholder/placeholder.component';
 import { ElementTimesDirective } from './directives/times.directive';
 import { SharedModule } from '../../shared/shared.module';
+import { SegmentComponent } from '../../components/segment/segment.component';
 
 
 @NgModule({
   declarations: [
     ElementsHomeComponent,
     PlaceholderComponent,
-    ElementTimesDirective
+    ElementTimesDirective,
+    SegmentComponent
   ],
   imports: [
     CommonModule,
