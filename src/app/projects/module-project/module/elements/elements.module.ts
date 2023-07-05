@@ -5,6 +5,7 @@ import { ElementsRoutingModule } from './elements-routing.module';
 import { ElementsHomeComponent } from '../../components/elements-home/elements-home.component';
 import { PlaceholderComponent } from '../../components/placeholder/placeholder.component';
 import { ElementTimesDirective } from './directives/times.directive';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ElementTimesDirective } from './directives/times.directive';
   ],
   imports: [
     CommonModule,
-    ElementsRoutingModule
+    ElementsRoutingModule,
+    SharedModule
   ],
   exports: []
 })
