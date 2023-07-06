@@ -8,6 +8,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { BiographyComponent } from '../../components/collections/biography/biography.component';
 import { CompaniesComponent } from '../../components/collections/companies/companies.component';
 import { PartnersComponent } from '../../components/collections/partners/partners.component';
+import { TabsComponent } from '../../components/collections/tabs/tabs.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PartnersComponent } from '../../components/collections/partners/partner
     TableComponent,
     BiographyComponent,
     CompaniesComponent,
-    PartnersComponent
+    PartnersComponent,
+    TabsComponent
   ],
   imports: [
     CommonModule,
