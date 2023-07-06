@@ -7,4 +7,29 @@
     [headers]="headers"
 ></app-table>
 
-<router-outlet></router-outlet>
+<app-divider>
+    Tab Menu
+</app-divider>
+<div class="ui grid">
+    <div class="four wide column">
+        <div class="ui vertical fluid tabular menu">
+            <a routerLink="./" routerLinkActive="active" class="item">biography</a>
+            <a routerLink="./companies" routerLinkActive="active" class="item">Companies</a>
+            <a routerLink="./partners" routerLinkActive="active" class="item">Partners</a>
+        </div>
+    </div>
+    <div class="twelve wide stretched column">
+        <div class="ui segment">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<!-- Relative RouterLink References -->
+<!-- 
+    ./      ->  localhost:4200/collections
+     /      ->  localhost:4200
+    ../hi   ->  localhost:4200/hi
+    BOO     ->  localhost:4200/collections/BOO
+    ./BOO   ->  localhost:4200/collections/BOO
+ -->
