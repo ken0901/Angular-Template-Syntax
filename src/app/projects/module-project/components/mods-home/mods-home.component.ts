@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mods-home',
@@ -7,10 +7,9 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 })
 export class ModsHomeComponent implements OnInit {
 
-  constructor(private el: ElementRef) { }
+  constructor() { }
 
   ngOnInit(): void {
-    document.body.appendChild(this.el.nativeElement);
   }
 
 }
