@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WikipediaService } from './services/wikipedia.service';
 
 @Component({
   selector: 'project-wsearch',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WsearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private wikipediaService: WikipediaService) { }
 
   ngOnInit(): void {
   }
 
   onTerm(term: string){
-    console.log('I am the app', term);
+    const results = this.wikipediaService.search(term);
+    console.log(results);
   }
 }
