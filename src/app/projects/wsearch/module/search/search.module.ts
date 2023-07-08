@@ -12,6 +12,10 @@ import { SearchRoutingModule } from './search-routing.module';
   imports: [
     CommonModule,
     SearchRoutingModule
+  ],
+  exports: [
+    PageListComponent,
+    SearchBarComponent
   ]
 })
 export class SearchModule { }

@@ -16,6 +16,7 @@ import { ModuleProjectComponent } from './projects/module-project/module-project
 import { HomeComponent } from './projects/module-project/components/home/home.component';
 import { NotFoundComponent } from './projects/module-project/components/not-found/not-found.component';
 import { WsearchComponent } from './projects/wsearch/wsearch.component';
+import { SearchModule } from './projects/wsearch/module/search/search.module';
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import { WsearchComponent } from './projects/wsearch/wsearch.component';
     imports: [
         BrowserModule,
         AppRoutingModule,
+        SearchModule
     ],
     providers: [
     ],
