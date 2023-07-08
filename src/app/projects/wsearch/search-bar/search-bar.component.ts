@@ -13,6 +13,11 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onFormSubmit(event: any) {
+    event.preventDefault();
+    console.log(this.term);
+  }
+
   // onInput(event: Event){
   //  const target = event.target as HTMLInputElement;
   //  this.term = target.value ;

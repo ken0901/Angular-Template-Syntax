@@ -1,1 +1,3 @@
-<input #inputBox (input)="term = inputBox.value"/>
+<form (submit)="onFormSubmit($event)">
+    <input (input)="term = $event.target.value" />
+</form>
