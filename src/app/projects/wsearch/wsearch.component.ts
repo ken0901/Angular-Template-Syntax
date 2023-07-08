@@ -12,4 +12,7 @@ export class WsearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onTerm(term: string){
+    console.log('I am the app', term);
+  }
 }
