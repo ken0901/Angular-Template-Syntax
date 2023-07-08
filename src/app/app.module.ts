@@ -15,6 +15,7 @@ import { TimesDirective } from './projects/directives/times.directive';
 import { ModuleProjectComponent } from './projects/module-project/module-project.component';
 import { HomeComponent } from './projects/module-project/components/home/home.component';
 import { NotFoundComponent } from './projects/module-project/components/not-found/not-found.component';
+import { WsearchComponent } from './projects/wsearch/wsearch.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { NotFoundComponent } from './projects/module-project/components/not-foun
         ModuleProjectComponent,
         HomeComponent,
         NotFoundComponent,
+        WsearchComponent,
     ],
     imports: [
         BrowserModule,
