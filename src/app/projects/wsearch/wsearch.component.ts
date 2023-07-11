@@ -7,6 +7,7 @@ import { WikipediaService } from './services/wikipedia.service';
   styleUrls: ['./wsearch.component.css']
 })
 export class WsearchComponent implements OnInit {
+  pages = [];
 
   constructor(private wikipediaService: WikipediaService) { }
 
@@ -14,8 +15,8 @@ export class WsearchComponent implements OnInit {
   }
 
   onTerm(term: string){
-    this.wikipediaService.search(term).subscribe((response) => {
-      console.log(response);
+    this.wikipediaService.search(term).subscribe((response: any) => {
+      this.pages = response.query.search;
     });
   }
 }
