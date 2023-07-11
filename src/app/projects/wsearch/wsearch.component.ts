@@ -14,7 +14,8 @@ export class WsearchComponent implements OnInit {
   }
 
   onTerm(term: string){
-    const results = this.wikipediaService.search(term);
-    console.log(results);
+    this.wikipediaService.search(term).subscribe((response) => {
+      console.log(response);
+    });
   }
 }
