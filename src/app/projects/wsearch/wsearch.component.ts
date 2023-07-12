@@ -20,3 +20,17 @@ export class WsearchComponent implements OnInit {
     });
   }
 }
+
+
+/**
+ *  Notes on Rxjs
+ * 
+ *  Separate library from Angular
+ *  Used extensively by Angular for managing data
+ *  We use this instead of promises or async/await for handling async stuff
+ *  Not strictly required! We can use promises and async/await!
+ *  Rxjs makes building some kinds of features really really easy compared to writing normal code
+ *  Hard. Probably the hardest thing in hte world of JS, period.
+ *  If you can get a good grasp of Rxjs, all of Angular is at your fingertips!
+ * 
+ */
