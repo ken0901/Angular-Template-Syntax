@@ -33,4 +33,13 @@ export class WsearchComponent implements OnInit {
  *  Hard. Probably the hardest thing in hte world of JS, period.
  *  If you can get a good grasp of Rxjs, all of Angular is at your fingertips!
  * 
+ *  Play around this website - https://out.stegrider.vercel.app/
+ *  const  { fromEvent } = Rx;
+ *  const input = document.createElement('input');
+ *  const container = document.querySelector('.container');
+ *  container.appendChild(input);
+ *  const observable = fromEvent(input, 'input');
+ *  // This is specific to this tool, we don't need to write this in the real world
+ *  observable;
+ * 
  */
