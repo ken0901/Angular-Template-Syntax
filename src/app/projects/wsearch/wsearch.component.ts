@@ -53,4 +53,34 @@ export class WsearchComponent implements OnInit {
  *  // This is specific to this tool, we don't need to write this in the real world
  *  observable;
  * 
+ * 
+ * 
+ *  Low Level Observables
+ *  const { Observable } = Rx;
+ *  const observable = new Observable((subscriber) => {
+ *  
+ *    // Throw the value 1 into our pipeline
+ *    subscriber.next(1);
+ *    // Marks the observable as complete, no more values will come out
+ *    subscriber.complete();
+ *  
+ *    // emit an error, nomore values will come out
+ *    subscriber.error(new Error('error'));
+ *  });
+ * 
+ *  observable.subscribe({
+ *    next(value) {
+ *      console.log('Got a value', value);
+ *    }, // (value) => console.log('Got a value', value);
+ *    complete() {
+ *      console.log('Observable is complete. Dont expect any more values');
+ *    },
+ *    error(err) {
+ *      console.log('BAD THING!!!', err.message);
+ *    }
+ * });
+ * 
+ *  // ONLY HERE  because this tools requires it 
+ *  observable;
+ * 
  */
