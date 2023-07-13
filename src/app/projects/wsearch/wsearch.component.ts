@@ -3,33 +3,33 @@ import { WikipediaService } from './services/wikipedia.service';
 import { Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 
-interface Car {
-  year: number;
-  color: string;
-  running: boolean;
-  make: {
-    name: string;
-    dateCreated: number;
-  }
-}
+// interface Car {
+//   year: number;
+//   color: string;
+//   running: boolean;
+//   make: {
+//     name: string;
+//     dateCreated: number;
+//   }
+// }
 
-const observable = new Observable<Car>((observer) => {
-  observer.next({
-    year: 2000,
-    color: 'red',
-    running: true,
-    make: {
-      name: 'Chevy',
-      dateCreated: 1950
-    }
-  });
-}).pipe(
-  pluck('make', 'dateCreated')
-);
+// const observable = new Observable<Car>((observer) => {
+//   observer.next({
+//     year: 2000,
+//     color: 'red',
+//     running: true,
+//     make: {
+//       name: 'Chevy',
+//       dateCreated: 1950
+//     }
+//   });
+// }).pipe(
+//   pluck('make', 'dateCreated')
+// );
 
-observable.subscribe(value => {
-  console.log(value);
-});
+// observable.subscribe(value => {
+//   console.log(value);
+// });
 
 @Component({
   selector: 'project-wsearch',
@@ -45,8 +45,8 @@ export class WsearchComponent implements OnInit {
   }
 
   onTerm(term: string){
-    this.wikipediaService.search(term).subscribe((response: any) => {
-      this.pages = response.query.search;
+    this.wikipediaService.search(term).subscribe((response) => {
+      this.pages = response;
     });
   }
 }
