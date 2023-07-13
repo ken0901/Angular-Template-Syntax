@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { WikipediaService } from './services/wikipedia.service';
+import { Observable } from 'rxjs';
+
+const observable = new Observable<number>((observer) => {
+  observer.next(1);
+});
+
+observable.subscribe(value => {
+  console.log(value);
+});
 
 @Component({
   selector: 'project-wsearch',
