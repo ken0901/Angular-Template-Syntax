@@ -18,6 +18,8 @@ import { HomeComponent } from './projects/module-project/components/home/home.co
 import { NotFoundComponent } from './projects/module-project/components/not-found/not-found.component';
 import { WsearchComponent } from './projects/wsearch/wsearch.component';
 import { SearchModule } from './projects/wsearch/module/search/search.module';
+import { PhotosComponent } from './projects/photos/photos.component';
+import { PhotosModule } from './projects/photos/module/photos.module';
 
 @NgModule({
     declarations: [
@@ -35,12 +37,14 @@ import { SearchModule } from './projects/wsearch/module/search/search.module';
         HomeComponent,
         NotFoundComponent,
         WsearchComponent,
+        PhotosComponent,
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
         AppRoutingModule,
-        SearchModule
+        SearchModule,
+        PhotosModule
     ],
     providers: [
     ],
