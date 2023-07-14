@@ -1,1 +1,4 @@
-<img [src]="pohtoUrl"/>
+<div>
+    <button (click)="onClick()">Fetch New Image</button>
+</div>
+<img *ngIf="pohtoUrl" [src]="pohtoUrl"/>
