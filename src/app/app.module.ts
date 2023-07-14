@@ -20,6 +20,8 @@ import { WsearchComponent } from './projects/wsearch/wsearch.component';
 import { SearchModule } from './projects/wsearch/module/search/search.module';
 import { PhotosComponent } from './projects/photos/photos.component';
 import { PhotosModule } from './projects/photos/module/photos.module';
+import { CreditCardComponent } from './projects/credit-card/credit-card.component';
+import { CreditCardModule } from './projects/credit-card/module/credit-card/credit-card.module';
 
 @NgModule({
     declarations: [
@@ -38,13 +40,15 @@ import { PhotosModule } from './projects/photos/module/photos.module';
         NotFoundComponent,
         WsearchComponent,
         PhotosComponent,
+        CreditCardComponent,
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
         AppRoutingModule,
         SearchModule,
-        PhotosModule
+        PhotosModule,
+        CreditCardModule
     ],
     providers: [
     ],
