@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PasswordGeneratorComponent } from './projects/password-generator/password-generator.component';
@@ -22,6 +23,8 @@ import { PhotosComponent } from './projects/photos/photos.component';
 import { PhotosModule } from './projects/photos/module/photos.module';
 import { CreditCardComponent } from './projects/credit-card/credit-card.component';
 import { CreditCardModule } from './projects/credit-card/module/credit-card/credit-card.module';
+import { IConfig,NgxMaskModule } from 'ngx-mask';
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 @NgModule({
     declarations: [
@@ -45,6 +48,7 @@ import { CreditCardModule } from './projects/credit-card/module/credit-card/cred
     imports: [
         BrowserModule,
         HttpClientModule,
+        NgxMaskModule.forRoot(options),
         AppRoutingModule,
         SearchModule,
         PhotosModule,

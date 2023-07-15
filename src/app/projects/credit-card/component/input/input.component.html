@@ -2,6 +2,7 @@
   <label class="label">{{ label }}</label>
   <div class="control">
     <input 
+      mask="SSSS SSSS"
       class="input" 
       [formControl]="control" 
       [ngClass]="{'is-danger': showErrors()}"
