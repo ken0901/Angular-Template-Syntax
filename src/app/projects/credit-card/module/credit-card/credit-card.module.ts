@@ -7,7 +7,7 @@ import { InputComponent } from '../../component/input/input.component';
 @NgModule({
   declarations: [
     CardFormComponent,
-    InputComponent
+    InputComponent,
   ],
   imports: [
     CommonModule,
@@ -16,7 +16,7 @@ import { InputComponent } from '../../component/input/input.component';
   exports: [
     ReactiveFormsModule,
     CardFormComponent,
-    InputComponent
+    InputComponent,
   ]
 })
 export class CreditCardModule { }
