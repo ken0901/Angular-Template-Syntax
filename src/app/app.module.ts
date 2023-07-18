@@ -22,6 +22,8 @@ import { PhotosComponent } from './projects/photos/photos.component';
 import { PhotosModule } from './projects/photos/module/photos.module';
 import { CreditCardComponent } from './projects/credit-card/credit-card.component';
 import { CreditCardModule } from './projects/credit-card/module/credit-card/credit-card.module';
+import { EmailFormComponent } from './projects/email-form/email-form.component';
+import { EmailFormModule } from './projects/email-form/module/email-form/email-form.module';
 
 @NgModule({
     declarations: [
@@ -41,6 +43,7 @@ import { CreditCardModule } from './projects/credit-card/module/credit-card/cred
         WsearchComponent,
         PhotosComponent,
         CreditCardComponent,
+        EmailFormComponent,
     ],
     imports: [
         BrowserModule,
@@ -48,7 +51,8 @@ import { CreditCardModule } from './projects/credit-card/module/credit-card/cred
         AppRoutingModule,
         SearchModule,
         PhotosModule,
-        CreditCardModule
+        CreditCardModule,
+        EmailFormModule
     ],
     providers: [
     ],
