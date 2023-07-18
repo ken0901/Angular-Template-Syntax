@@ -13,4 +13,8 @@ export class EmailFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log(this.email);
+  }
+
 }
