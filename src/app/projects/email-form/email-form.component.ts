@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'projects-email-form',
+  selector: 'project-email-form',
   templateUrl: './email-form.component.html',
   styleUrls: ['./email-form.component.css']
 })

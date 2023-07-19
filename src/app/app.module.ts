@@ -24,6 +24,8 @@ import { CreditCardComponent } from './projects/credit-card/credit-card.componen
 import { CreditCardModule } from './projects/credit-card/module/credit-card/credit-card.module';
 import { EmailFormComponent } from './projects/email-form/email-form.component';
 import { EmailFormModule } from './projects/email-form/module/email-form/email-form.module';
+import { MathGameComponent } from './projects/math-game/math-game.component';
+import { MathModule } from './projects/math-game/math-module/math.module';
 
 @NgModule({
     declarations: [
@@ -44,6 +46,7 @@ import { EmailFormModule } from './projects/email-form/module/email-form/email-f
         PhotosComponent,
         CreditCardComponent,
         EmailFormComponent,
+        MathGameComponent,
     ],
     imports: [
         BrowserModule,
@@ -52,7 +55,8 @@ import { EmailFormModule } from './projects/email-form/module/email-form/email-f
         SearchModule,
         PhotosModule,
         CreditCardModule,
-        EmailFormModule
+        EmailFormModule,
+        MathModule
     ],
     providers: [
     ],
