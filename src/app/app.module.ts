@@ -27,7 +27,9 @@ import { EmailFormModule } from './projects/email-form/module/email-form/email-f
 import { MathGameComponent } from './projects/math-game/math-game.component';
 import { MathModule } from './projects/math-game/math-module/math.module';
 import { EmailClientComponent } from './projects/email-client/email-client.component';
-import { EmailClientModule } from './projects/email-client/module/email-client/email-client.module';
+import { EmailClientModule } from './projects/email-client/module/email-client.module';
+import { SigninComponent } from './projects/email-client/components/auth/signin/signin.component';
+import { SignupComponent } from './projects/email-client/components/auth/signup/signup.component';
 
 @NgModule({
     declarations: [
