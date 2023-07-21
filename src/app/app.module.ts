@@ -26,6 +26,8 @@ import { EmailFormComponent } from './projects/email-form/email-form.component';
 import { EmailFormModule } from './projects/email-form/module/email-form/email-form.module';
 import { MathGameComponent } from './projects/math-game/math-game.component';
 import { MathModule } from './projects/math-game/math-module/math.module';
+import { EmailClientComponent } from './projects/email-client/email-client.component';
+import { EmailClientModule } from './projects/email-client/module/email-client/email-client.module';
 
 @NgModule({
     declarations: [
@@ -47,6 +49,7 @@ import { MathModule } from './projects/math-game/math-module/math.module';
         CreditCardComponent,
         EmailFormComponent,
         MathGameComponent,
+        EmailClientComponent,
     ],
     imports: [
         BrowserModule,
@@ -56,7 +59,8 @@ import { MathModule } from './projects/math-game/math-module/math.module';
         PhotosModule,
         CreditCardModule,
         EmailFormModule,
-        MathModule
+        MathModule,
+        EmailClientModule
     ],
     providers: [
     ],
