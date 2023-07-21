@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmailClientRoutingModule } from './email-client.routing.module';
+import { AuthModule } from '../components/auth/auth.module';
 
 
 
@@ -8,7 +9,8 @@ import { EmailClientRoutingModule } from './email-client.routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    EmailClientRoutingModule
+    EmailClientRoutingModule,
+    AuthModule
   ]
 })
 export class EmailClientModule { }

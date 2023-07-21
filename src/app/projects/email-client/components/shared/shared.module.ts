@@ -10,6 +10,9 @@ import { InputComponent } from './input/input.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    InputComponent
   ]
 })
 export class SharedModule { }
