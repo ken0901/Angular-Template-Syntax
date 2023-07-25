@@ -45,10 +45,22 @@ export class AuthService {
       username: credentials.username,
       password: credentials.password,
       passwordConfirmation: credentials.passwordConfirmation
+    },{
+      withCredentials: true
     }).pipe(
       tap(() => {
         this.signedIn$.next(true);
       })
     );
+  }
+
+  checkAuth(){
+    return this.http.get(`${this.rootUrl}/auth/signedin`, {
+      withCredentials: true
+    }).pipe(
+        tap((response => {
+          console.log(response);
+      }))
+    )
   }
 }
