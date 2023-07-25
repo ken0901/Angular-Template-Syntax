@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'project-email-client',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./email-client.component.css']
 })
 export class EmailClientComponent implements OnInit {
+  signedIn = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.authService.signedIn$.subscribe((signedIn) => {
+      this.signedIn = signedIn;
+    });
   }
 
 }
