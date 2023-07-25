@@ -17,4 +17,12 @@ export class AuthService {
       username: username
     });
   }
+
+  signup(credentials: any){
+    return this.http.post<any>('https://api.angular-email.com/auth/signup', {
+      username: credentials.username,
+      password: credentials.password,
+      passwordConfirmation: credentials.passwordConfirmation
+    });
+  }
 }
