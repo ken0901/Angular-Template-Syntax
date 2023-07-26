@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'inbox', loadChildren: () => import('../components/inbox/inbox.module').then(mod => mod.InboxModule)}
+  { path: '', component: HomeComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class EmailClientRoutingModule { }
+export class InboxRoutingModule { }
