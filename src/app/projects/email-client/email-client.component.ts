@@ -16,7 +16,7 @@ export class EmailClientComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.authService.checkAuth().subscribe();
+    this.authService.checkAuth().subscribe(()=> {});
     // this.authService.signedIn$.subscribe((signedIn) => {
     //   this.signedIn = signedIn;
     // });
