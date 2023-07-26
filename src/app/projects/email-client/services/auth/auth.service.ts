@@ -17,6 +17,11 @@ interface SignupResponse {
   username: string;
 }
 
+interface SignedInResponse {
+  authenticated: boolean;
+  username: string;
+}
+
 /**
  *  Requirements of the SignedIn Observable
  * 
@@ -53,10 +58,10 @@ export class AuthService {
   }
 
   checkAuth(){
-    return this.http.get(`${this.rootUrl}/auth/signedin`).pipe(
-        tap((response => {
-          console.log(response);
-      }))
-    )
+    return this.http.get<SignedInResponse>(`${this.rootUrl}/auth/signedin`).pipe(
+        tap(({ authenticated}) => {
+          this.signedIn$.next(authenticated);
+      })
+    );
   }
 }
