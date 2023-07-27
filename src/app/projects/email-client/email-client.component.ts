@@ -47,4 +47,15 @@ export class EmailClientComponent implements OnInit {
  * /auth/signedin       GET                                                   Checks to see if the user is currently signed in
  * /auth/signout        POST           {}                                     Signs the user out
  * 
+ * 
+ * /emails              GET                                                   Gets a list of all emails received by the current user
+ * 
+ * /emails/:id          GET                                                   Gets a specific email with the given ID
+ * 
+ * /emails              POST           {                                      Sends an email
+ *                                       subject: string;
+ *                                       text: string;
+ *                                       to: string
+ *                                       from: string 
+ *                                     }                                       
  */
