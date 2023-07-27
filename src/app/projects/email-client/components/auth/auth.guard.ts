@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, Route, UrlSegment, UrlTree } from '@angular/router';
+import { CanLoad, Route, UrlSegment } from '@angular/router';
 import { Observable } from 'rxjs';
+import { skipWhile, take } from 'rxjs/operators';
+import { AuthService } from '../../services/auth/auth.service';
 
 /**
  * canActivate - User can vist this route.
@@ -26,10 +28,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanLoad {
+  constructor(private authService: AuthService) {}
+
   canLoad(route: Route, segments: UrlSegment[]): boolean | Observable<boolean> | Promise<boolean> {
-    return new Observable((subscriber) => {
-      subscriber.next(true);
-      //subscriber.complete(); // no longer required to mark.
-    });
+    return this.authService.signedIn$.pipe(
+      skipWhile(value => value === null),
+      take(1)
+    );
+    
+    
+    // Issue with guard and above is the solution
+    // return new Observable((subscriber) => {
+    //   subscriber.next(true);
+    //   subscriber.complete(); // no longer required to mark.
+    // });
   }
 }

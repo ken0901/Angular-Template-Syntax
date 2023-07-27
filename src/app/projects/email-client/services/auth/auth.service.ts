@@ -40,7 +40,7 @@ interface SignedInResponse {
 })
 export class AuthService {
   rootUrl = 'https://api.angular-email.com';
-  signedIn$ = new BehaviorSubject(false); // $ dollar sign is an observable.
+  signedIn$ = new BehaviorSubject(null); // $ dollar sign is an observable.
 
   constructor(private http: HttpClient) { }
 
