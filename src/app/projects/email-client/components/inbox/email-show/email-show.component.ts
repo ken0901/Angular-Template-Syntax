@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EmailService } from '../../../services/inbox/email.service';
 
 @Component({
   selector: 'app-email-show',
@@ -14,10 +15,15 @@ export class EmailShowComponent implements OnInit {
    *  Observable -> Emits values whenever some specific part of the URL changes.
    *  Snapshot -> Simple description of what the URL is right now.
    */
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private emailService: EmailService) { }
 
   ngOnInit(): void {
-    this.route.snapshot.params.id;
+    this.route.params.subscribe(({ id }) => {
+      this.emailService.getEmail(id).subscribe(email => {
+        console.log(email);
+      });
+    });
 
     // this.route.params.subscribe(({ id }) =>{
     //   this.emailService.getEmail(id);
