@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Email } from '../../models/email';
 
 interface EmailSummary {
   id: string;
@@ -7,13 +8,7 @@ interface EmailSummary {
   from: string;
 }
 
-interface Email {
-  id: string;
-  subject: string;
-  text: string;
-  from: string;
-  html: string;
-}
+
 
 @Injectable({
   providedIn: 'root'
