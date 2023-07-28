@@ -8,12 +8,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmailShowComponent implements OnInit {
 
+  /**
+   *  Information From the Current Route
+   *  
+   *  Observable -> Emits values whenever some specific part of the URL changes.
+   *  Snapshot -> Simple description of what the URL is right now.
+   */
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(({ id }) =>{
-      //this.emailService.getEmail(id);
-    });
+    this.route.snapshot.params.id;
+
+    // this.route.params.subscribe(({ id }) =>{
+    //   this.emailService.getEmail(id);
+    // });
   }
 
 }
