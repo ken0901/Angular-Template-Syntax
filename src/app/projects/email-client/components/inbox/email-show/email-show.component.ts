@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EmailService } from '../../../services/inbox/email.service';
-import { switchMap } from 'rxjs/operators';
 import { Email } from '../../../models/email';
+import { EmailService } from '../../../services/inbox/email.service';
 
 @Component({
   selector: 'app-email-show',
@@ -19,32 +18,38 @@ export class EmailShowComponent implements OnInit {
    */
   constructor(private route: ActivatedRoute,
               private emailService: EmailService) {
-    this.route.data.subscribe(data => {
-      console.log(data);
+    this.email = route.snapshot.data.email;
+    this.route.data.subscribe(({ email }) => {
+      this.email = email;
     });
   }
 
   ngOnInit(): void {
-    // this.route.params.pipe(
-    //   switchMap(({ id }) => {
-    //     return this.emailService.getEmail(id);
-    //   })
-    // ). subscribe((email) => {
-    //   this.email = email;
-    // });
     
-    // not good solution
-    // this.route.params.subscribe(({ id }) => {
-    //   this.emailService.getEmail(id).subscribe(email => {
-    //     console.log(email);
-    //   });
-    // });
-
-
-    // not good solution
-    // this.route.params.subscribe(({ id }) =>{
-    //   this.emailService.getEmail(id);
-    // });
   }
 
 }
+
+
+// 1. Approach - ngonInit method 
+// nog good solution
+// this.route.params.pipe(
+//   switchMap(({ id }) => {
+//     return this.emailService.getEmail(id);
+//   })
+// ). subscribe((email) => {
+//   this.email = email;
+// });
+
+// not good solution
+// this.route.params.subscribe(({ id }) => {
+//   this.emailService.getEmail(id).subscribe(email => {
+//     console.log(email);
+//   });
+// });
+
+
+// not good solution
+// this.route.params.subscribe(({ id }) =>{
+//   this.emailService.getEmail(id);
+// });
