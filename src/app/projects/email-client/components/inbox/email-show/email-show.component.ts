@@ -18,16 +18,20 @@ export class EmailShowComponent implements OnInit {
    *  Snapshot -> Simple description of what the URL is right now.
    */
   constructor(private route: ActivatedRoute,
-              private emailService: EmailService) { }
+              private emailService: EmailService) {
+    this.route.data.subscribe(data => {
+      console.log(data);
+    });
+  }
 
   ngOnInit(): void {
-    this.route.params.pipe(
-      switchMap(({ id }) => {
-        return this.emailService.getEmail(id);
-      })
-    ). subscribe((email) => {
-      this.email = email;
-    });
+    // this.route.params.pipe(
+    //   switchMap(({ id }) => {
+    //     return this.emailService.getEmail(id);
+    //   })
+    // ). subscribe((email) => {
+    //   this.email = email;
+    // });
     
     // not good solution
     // this.route.params.subscribe(({ id }) => {
