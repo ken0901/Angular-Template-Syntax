@@ -9,7 +9,12 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class EmailFormComponent implements OnInit {
   @Input() email : Email;
-  emailForm: FormGroup;
+  emailForm: FormGroup<{
+    to: FormControl<string | null>;
+    from: FormControl<string | null>;
+    subject: FormControl<string | null>;
+    text: FormControl<string | null>;
+  }>;
 
   constructor() { }
 
