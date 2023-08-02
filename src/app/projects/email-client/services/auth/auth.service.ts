@@ -26,6 +26,9 @@ interface SignedInResponse {
   authenticated: boolean;
   username: string;
 }
+interface SigninResponse {
+  username: string;
+}
 
 /**
  *  Requirements of the SignedIn Observable
@@ -41,6 +44,7 @@ interface SignedInResponse {
 export class AuthService {
   rootUrl = 'https://api.angular-email.com';
   signedIn$ = new BehaviorSubject(null); // $ dollar sign is an observable.
+  username = '';
 
   constructor(private http: HttpClient) { }
 
@@ -56,16 +60,18 @@ export class AuthService {
       password: credentials.password,
       passwordConfirmation: credentials.passwordConfirmation
     }).pipe(
-      tap(() => {
+      tap(({username}) => {
         this.signedIn$.next(true);
+        this.username = username;
       })
     );
   }
 
   checkAuth(){
     return this.http.get<SignedInResponse>(`${this.rootUrl}/auth/signedin`).pipe(
-        tap(({ authenticated}) => {
+        tap(({ authenticated, username}) => {
           this.signedIn$.next(authenticated);
+          this.username = username;
       })
     );
   }
@@ -79,9 +85,10 @@ export class AuthService {
   }
 
   signin(credentials: SigninCredentials){
-    return this.http.post(`${this.rootUrl}/auth/signin`, credentials).pipe(
-      tap(()=>{
+    return this.http.post<SigninResponse>(`${this.rootUrl}/auth/signin`, credentials).pipe(
+      tap(({username}) => {
         this.signedIn$.next(true);
+        this.username = username;
       })
     );
   }
