@@ -10,7 +10,7 @@ import { EmailService } from '../../../services/inbox/email.service';
 })
 export class EmailCreateComponent implements OnInit {
   showModal = false;
-  email: Email
+  email: Email;
 
   constructor(private authService: AuthService,
               private emailService: EmailService) {
