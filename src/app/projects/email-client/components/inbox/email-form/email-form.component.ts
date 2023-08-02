@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Email } from '../../../models/email';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-email-form',
@@ -10,10 +10,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class EmailFormComponent implements OnInit {
   @Input() email : Email;
   emailForm: FormGroup<{
-    to: FormControl<string | null>;
-    from: FormControl<string | null>;
-    subject: FormControl<string | null>;
-    text: FormControl<string | null>;
+    to: FormControl;
+    from: FormControl;
+    subject: FormControl;
+    text: FormControl;
   }>;
 
   constructor() { }
@@ -22,10 +22,10 @@ export class EmailFormComponent implements OnInit {
     const { subject, from, to, text } = this.email;
 
     this.emailForm = new FormGroup({
-      to: new FormControl(to),
-      from: new FormControl(from),
-      subject: new FormControl(subject),
-      text: new FormControl(text)
+      to: new FormControl(to, [Validators.required, Validators.email]),
+      from: new FormControl({ value: from, disabled: true}),
+      subject: new FormControl(subject, [Validators.required]),
+      text: new FormControl(text, [Validators.required])
     });
   }
 
