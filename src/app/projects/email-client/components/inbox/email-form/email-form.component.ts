@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Email } from '../../../models/email';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EmailFormComponent implements OnInit {
   @Input() email : Email;
+  @Output() emailSubmit = new EventEmitter();
   emailForm: FormGroup<{
     to: FormControl;
     from: FormControl;
@@ -29,4 +30,11 @@ export class EmailFormComponent implements OnInit {
     });
   }
 
+  onSubmit() {
+    if(this.emailForm.invalid){
+      return;
+    }
+    
+    this.emailSubmit.emit(this.emailForm.value);
+  }
 }
