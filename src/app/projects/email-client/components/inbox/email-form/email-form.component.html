@@ -2,7 +2,7 @@
     <app-input inputType="email" label="To"  [control]="emailForm.controls.to"></app-input>
     <app-input inputType="email" label="From"  [control]="emailForm.controls.from"></app-input>
     <app-input inputType="text" label="Subject"  [control]="emailForm.controls.subject"></app-input>
-    <app-input inputType="text" label="Content"  [control]="emailForm.controls.text"></app-input>
+    <app-input controlType="textarea"  label="Content"  [control]="emailForm.controls.text"></app-input>
 
     <button class="ui button primary">Send</button>
 </form>
