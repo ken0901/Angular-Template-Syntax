@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 // Javascript way - Get latitude and longitude from console log in website develope mode.
 
@@ -24,4 +25,16 @@ import { Injectable } from '@angular/core';
 export class ForecastService {
 
   constructor() { }
+
+  getCurrentlocation() {
+    return new Observable<GeolocationCoordinates>((observer) => {
+      window.navigator.geolocation.getCurrentPosition(
+        (position) => {
+          observer.next(position.coords);
+          observer.complete();
+        },
+        (err) => observer.error(err)
+      )
+    });
+  }
 }
