@@ -30,6 +30,8 @@ import { EmailClientComponent } from './projects/email-client/email-client.compo
 import { EmailClientModule } from './projects/email-client/module/email-client.module';
 import { SigninComponent } from './projects/email-client/components/auth/signin/signin.component';
 import { SignupComponent } from './projects/email-client/components/auth/signup/signup.component';
+import { LandingComponent } from './projects/landing/landing.component';
+import { LandingModule } from './projects/landing/module/landing/landing.module';
 
 @NgModule({
     declarations: [
@@ -52,6 +54,7 @@ import { SignupComponent } from './projects/email-client/components/auth/signup/
         EmailFormComponent,
         MathGameComponent,
         EmailClientComponent,
+        LandingComponent,
     ],
     imports: [
         BrowserModule,
@@ -62,7 +65,8 @@ import { SignupComponent } from './projects/email-client/components/auth/signup/
         CreditCardModule,
         EmailFormModule,
         MathModule,
-        EmailClientModule
+        EmailClientModule,
+        LandingModule
     ],
     providers: [
     ],
