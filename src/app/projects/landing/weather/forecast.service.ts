@@ -1,5 +1,7 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 // Javascript way - Get latitude and longitude from console log in website develope mode.
 
@@ -25,6 +27,18 @@ import { Observable } from 'rxjs';
 export class ForecastService {
 
   constructor() { }
+
+  getForecast() {
+    return this.getCurrentlocation().pipe(
+      map(coords => {
+        return new HttpParams()
+          .set('lat', String(coords.latitude))
+          .set('lon', String(coords.longitude))
+          .set('units', 'metric')
+          .set('appid',''); // api key from openwethermap.org
+      })
+    );
+  }
 
   getCurrentlocation() {
     return new Observable<GeolocationCoordinates>((observer) => {
