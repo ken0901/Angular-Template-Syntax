@@ -21,6 +21,15 @@ import { map, switchMap } from 'rxjs/operators';
 //   );
 // }
 
+interface OpenWeatherResponse {
+  list: {
+    dt_txt: string;
+    main: {
+      temp: number;
+    }
+  }[]
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -38,7 +47,10 @@ export class ForecastService {
           .set('units', 'metric')
           .set('appid',''); // api key from openwethermap.org
       }),
-      switchMap(params => this.http.get(this.url, { params }))
+      switchMap(params => this.http.get<OpenWeatherResponse>(this.url, { params })),
+      map((response: OpenWeatherResponse) => {
+        response.list;
+      })
     );
   }
 
