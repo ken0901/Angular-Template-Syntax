@@ -1,7 +1,7 @@
-import { HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 // Javascript way - Get latitude and longitude from console log in website develope mode.
 
@@ -25,8 +25,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ForecastService {
+  private url = 'https://api.openweathermap.org/data/2.5/forecast';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getForecast() {
     return this.getCurrentlocation().pipe(
@@ -36,7 +37,8 @@ export class ForecastService {
           .set('lon', String(coords.longitude))
           .set('units', 'metric')
           .set('appid',''); // api key from openwethermap.org
-      })
+      }),
+      switchMap(params => this.http.get(this.url, { params }))
     );
   }
 
