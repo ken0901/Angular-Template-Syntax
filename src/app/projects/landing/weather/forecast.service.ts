@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, switchMap, pluck, mergeMap, filter, toArray } from 'rxjs/operators';
 
 // Javascript way - Get latitude and longitude from console log in website develope mode.
 
@@ -48,9 +48,21 @@ export class ForecastService {
           .set('appid',''); // api key from openwethermap.org
       }),
       switchMap(params => this.http.get<OpenWeatherResponse>(this.url, { params })),
-      map((response: OpenWeatherResponse) => {
-        response.list;
-      })
+      pluck('list'),
+      mergeMap(value => of(...value)),
+      filter((value, index) => index % 8 === 0)
+      // map(response => {
+      //   return response.list.map((record, index) => {
+      //     return { dt_txt, temp }
+      //   }).filter((record, index) => index % 8 === 0)
+      // })
+      ,map(value => {
+        return {
+          dateString: value.dt_txt,
+          temp: value.main.temp
+        };
+      }),
+      toArray()
     );
   }
 
