@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 /**
  *  # Subject - Hot by default - it will emit values even if nobody is listening!
@@ -20,6 +21,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class NotificationsService {
+  messages: Subject<any>;
 
-  constructor() { }
+  constructor() {
+    this.messages = new Subject<any>();
+  }
+
+  addSuccess(message: string) {
+    this.messages.next(message);
+  }
+
+  addError(message: string) {
+    this.messages.next(message);
+  }
+
+  clearMessage(id: number) {
+    
+  }
 }
