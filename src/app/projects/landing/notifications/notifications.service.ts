@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { scan } from 'rxjs/operators';
 
 /**
  *  # Subject - Hot by default - it will emit values even if nobody is listening!
@@ -39,7 +40,19 @@ export class NotificationsService {
   messages: Subject<Command>;
 
   constructor() {
-    this.messages = new Subject<Command>();
+    this.messages = new Subject<Command>()
+  }
+
+  getMessages() {
+    return this.messages.pipe(
+      scan((acc: Command[], value: Command) => {
+        if(value.type === 'clear') {
+          return acc.filter(message => message.id !== value.id);
+        } else {
+          return [...acc, value];
+        }
+      }, [])
+    );
   }
 
   addSuccess(message: string) {
