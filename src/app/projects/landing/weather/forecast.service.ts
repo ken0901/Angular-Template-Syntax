@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map, switchMap, pluck, mergeMap, filter, toArray, share, tap } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { map, switchMap, pluck, mergeMap, filter, toArray, share, tap, catchError, retry } from 'rxjs/operators';
 import { NotificationsService } from '../notifications/notifications.service';
 
 // Javascript way - Get latitude and longitude from console log in website develope mode.
@@ -79,11 +79,20 @@ export class ForecastService {
         (err) => observer.error(err)
       );
     }).pipe(
+      retry(1),
       tap(() => {
         this.notificationsService.addSuccess('Got your location');
-      },(err) => {
+      }, catchError( (err) => {
+        // #1 - Handle the error
         this.notificationsService.addError('Failed to get your location');
+
+        // #2 - Return a new observable
+        return throwError(err);
       })
+      // ,(err) => {
+      //   this.notificationsService.addError('Failed to get your location');
+      // })
+      )
     );
   }
 }
