@@ -12,10 +12,6 @@ export class NotificationListComponent implements OnInit {
 
   constructor(private notificationsService: NotificationsService) {
     this.messages = this.notificationsService.messagesOutput;
-
-    setInterval(() => {
-      this.notificationsService.addSuccess('It is working!!!');
-    }, 2000);
   }
 
   ngOnInit(): void {

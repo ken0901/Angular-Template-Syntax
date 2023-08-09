@@ -1,7 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map, switchMap, pluck, mergeMap, filter, toArray, share } from 'rxjs/operators';
+import { map, switchMap, pluck, mergeMap, filter, toArray, share, tap } from 'rxjs/operators';
+import { NotificationsService } from '../notifications/notifications.service';
 
 // Javascript way - Get latitude and longitude from console log in website develope mode.
 
@@ -36,7 +37,8 @@ interface OpenWeatherResponse {
 export class ForecastService {
   private url = 'https://api.openweathermap.org/data/2.5/forecast';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private notificationsService: NotificationsService) { }
 
   getForecast() {
     return this.getCurrentlocation().pipe(
@@ -75,7 +77,13 @@ export class ForecastService {
           observer.complete();
         },
         (err) => observer.error(err)
-      )
-    });
+      );
+    }).pipe(
+      tap(() => {
+        this.notificationsService.addSuccess('Got your location');
+      },(err) => {
+        this.notificationsService.addError('Failed to get your location');
+      })
+    );
   }
 }
