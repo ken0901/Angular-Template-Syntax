@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map, pluck, switchMap, tap } from 'rxjs/operators';
 
-interface Article {
+export interface Article {
   title: string;
   url: string;
 }
@@ -14,6 +14,8 @@ interface NewsApiResponse {
 }
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +24,7 @@ export class NewsApiService {
   private pageSize = 10;
   private apiKey = '';
   private country = 'us';
-
+  
   pagesInput: Subject<number>;
   pagesOutput: Observable<Article[]>;
   numberOfPages: Subject<number>;
