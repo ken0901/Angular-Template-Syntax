@@ -3,13 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map, pluck, switchMap, tap } from 'rxjs/operators';
 
+interface Article {
+  title: string;
+  url: string;
+}
+
 interface NewsApiResponse {
   totalResults: number;
-  articles: {
-    title: string;
-    url: string;
-  }[]
+  articles: Article[]
 }
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +24,7 @@ export class NewsApiService {
   private country = 'us';
 
   pagesInput: Subject<number>;
-  pagesOutput: Observable<any>;
+  pagesOutput: Observable<Article[]>;
   numberOfPages: Subject<number>;
 
   constructor(private http: HttpClient) {
