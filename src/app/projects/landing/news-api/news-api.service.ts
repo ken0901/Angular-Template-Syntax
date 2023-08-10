@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, pluck, switchMap, tap } from 'rxjs/operators';
 
 interface NewsApiResponse {
   totalResults: number;
@@ -42,7 +42,12 @@ export class NewsApiService {
       tap((response) => {
         const totalPages = Math.ceil(response.totalResults / this.pageSize);
         this.numberOfPages.next(totalPages);
-      })
+      }),
+      pluck('articles')
     );
+   }
+
+   getPage(page: number){
+    this.pagesInput.next(page);
    }
 }
