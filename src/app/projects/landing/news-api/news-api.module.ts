@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NaArticleListComponent } from './na-article-list/na-article-list.component';
 import { TrimOutletNamePipe } from './trim-outlet-name.pipe';
+import { SharedModule } from '../module/shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { TrimOutletNamePipe } from './trim-outlet-name.pipe';
     TrimOutletNamePipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     NaArticleListComponent

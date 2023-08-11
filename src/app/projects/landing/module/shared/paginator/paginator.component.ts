@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paginator.component.css']
 })
 export class PaginatorComponent implements OnInit {
+  //TODO: make sure we receive this value from the parent component
+  numberOfPages = 5;
 
   constructor() { }
 

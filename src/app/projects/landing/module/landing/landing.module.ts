@@ -4,7 +4,6 @@ import { WeatherModule } from '../../weather/weather.module';
 import { LandingComponent } from '../../landing.component';
 import { NotificationsModule } from '../../notifications/notifications.module';
 import { NewsApiModule } from '../../news-api/news-api.module';
-import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [LandingComponent],
@@ -12,8 +11,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     WeatherModule,
     NotificationsModule,
-    NewsApiModule,
-    SharedModule
+    NewsApiModule
   ],
   exports:[
     LandingComponent
