@@ -6,6 +6,9 @@ import { map, pluck, switchMap, tap } from 'rxjs/operators';
 export interface Article {
   title: string;
   url: string;
+  source: {
+    name: string;
+  }
 }
 
 interface NewsApiResponse {
