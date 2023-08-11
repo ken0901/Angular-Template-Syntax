@@ -80,6 +80,7 @@ export class NaArticleListComponent implements OnInit {
       "url": "https://apnews.com/article/belem-amazon-rainforest-summit-brazil-environment-crime-4e68ebf7f6c719d779ed726cc4f0c5dc",
     }
   ];
+  numberOfPage: number;
   
   constructor(private newsApiService: NewsApiService) {
     this.newsApiService.pagesOutput.subscribe((articles) => {
@@ -92,4 +93,7 @@ export class NaArticleListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getNumberOfPage() {
+    return this.numberOfPage = 3;
+  }
 }
