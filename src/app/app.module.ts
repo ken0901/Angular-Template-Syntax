@@ -30,6 +30,17 @@ import { TypingChallengeComponent } from './projects/typing-challenge/typing-cha
 import { SearchModule } from './projects/wsearch/module/search/search.module';
 import { WsearchComponent } from './projects/wsearch/wsearch.component';
 
+/**
+ *  Firebase Modules
+ */
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+import { environment } from 'src/environments/environment';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -62,9 +73,14 @@ import { WsearchComponent } from './projects/wsearch/wsearch.component';
         EmailFormModule,
         MathModule,
         EmailClientModule,
-        LandingModule
+        LandingModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase.config)),
+        provideAuth(() => getAuth()),
+        provideStorage(() => getStorage()),
+        provideFirestore(() => getFirestore()),
     ],
     providers: [
+        {provide: FIREBASE_OPTIONS, useValue: environment.firebase.config}
     ],
     bootstrap: [AppComponent]
 })
