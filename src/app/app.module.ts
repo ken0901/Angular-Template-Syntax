@@ -11,7 +11,6 @@ import { CreditCardModule } from './projects/credit-card/module/credit-card/cred
 import { ClassDirective } from './projects/directives/class.directive';
 import { DirectivesComponent } from './projects/directives/directives.component';
 import { TimesDirective } from './projects/directives/times.directive';
-import { EmailClientComponent } from './projects/email-client/email-client.component';
 import { EmailClientModule } from './projects/email-client/module/email-client.module';
 import { EmailFormComponent } from './projects/email-form/email-form.component';
 import { EmailFormModule } from './projects/email-form/module/email-form/email-form.module';
@@ -30,17 +29,8 @@ import { TypingChallengeComponent } from './projects/typing-challenge/typing-cha
 import { SearchModule } from './projects/wsearch/module/search/search.module';
 import { WsearchComponent } from './projects/wsearch/wsearch.component';
 
-/**
- *  Firebase Modules
- */
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth, getAuth } from '@angular/fire/auth';
-import { getStorage, provideStorage } from '@angular/fire/storage';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
-import { environment } from 'src/environments/environment';
-import { StyleProjectComponent } from './projects/style-project/style-project.component';
+import { StyleProjectModule } from './projects/style-project/module/main/style-project.module';
 
 @NgModule({
     declarations: [
@@ -62,8 +52,6 @@ import { StyleProjectComponent } from './projects/style-project/style-project.co
         CreditCardComponent,
         EmailFormComponent,
         MathGameComponent,
-        EmailClientComponent,
-        StyleProjectComponent,
     ],
     imports: [
         BrowserModule,
@@ -76,13 +64,10 @@ import { StyleProjectComponent } from './projects/style-project/style-project.co
         MathModule,
         EmailClientModule,
         LandingModule,
-        provideFirebaseApp(() => initializeApp(environment.firebase.config)),
-        provideAuth(() => getAuth()),
-        provideStorage(() => getStorage()),
-        provideFirestore(() => getFirestore()),
+        StyleProjectModule,
+       
     ],
     providers: [
-        {provide: FIREBASE_OPTIONS, useValue: environment.firebase.config}
     ],
     bootstrap: [AppComponent]
 })
