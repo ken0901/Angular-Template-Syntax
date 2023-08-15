@@ -1,0 +1,107 @@
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  padding: 32px;
+  background: var(--base);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.app-button {
+  padding: 8px 20px;
+
+  background: transparent;
+  border-radius: 25px;
+  border: 2px solid var(primary);
+  transition: 0.25s;
+  margin: 0 4px;
+}
+
+.app-button:hover,
+:focus {
+  background: var(primary);
+  border: 2px solid var(primary);
+  color: var(on-primary);
+}
+
+.app-input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  height: 36px;
+  line-height: 18px;
+  padding: 0 15px;
+  outline: none;
+}
+
+.app-input:focus {
+  border: 1px solid var(primary-dark);
+}
+
+.app-input:disabled {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.38);
+}
+
+@import "../fonts.css";
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(base-font-family);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(base-font-family);
+}
+
+h1, .h1 {
+    font-weight: 300;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+}
+
+h2, .h2 {
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+
+h3, .h3 {
+    font-weight: 400;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h4, .h4 {
+    font-weight: 400;
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+}
+
+h5, .h5 {
+    font-weight: 500;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+}
+
+h6, .h6 {
+    font-weight: 500;
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+}
+
+b, strong {
+    font-weight: 500;
+}
+
+code {
+  white-space: pre;
+}

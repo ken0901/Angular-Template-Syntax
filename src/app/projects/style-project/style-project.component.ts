@@ -11,9 +11,9 @@ export class StyleProjectComponent implements OnInit {
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.afs.collection('test').snapshotChanges().subscribe(data => {
-      console.log(data.map(x => x.payload.doc.data()));
-    });
+    // this.afs.collection('test').snapshotChanges().subscribe(data => {
+    //   console.log(data.map(x => x.payload.doc.data()));
+    // });
   }
 
 }

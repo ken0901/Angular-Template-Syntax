@@ -6,13 +6,14 @@
     cursor: pointer;
     margin-right: 0;
     margin-left: 1em;
+    text-decoration: none;
 }
 
 .app-a:hover {
     color: #008ba3;
 }
 
-.app-a:active {
+.app-a_active {
     color: #008ba3;
 }
 

@@ -62,7 +62,7 @@ import { StyleProjectModule } from './projects/style-project/module/main/style-p
         CreditCardModule,
         EmailFormModule,
         MathModule,
-        EmailClientModule,
+        // EmailClientModule,
         LandingModule,
         StyleProjectModule,
        

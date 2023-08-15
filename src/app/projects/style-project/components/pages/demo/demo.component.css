@@ -1,0 +1,43 @@
+.app-page {
+  max-width: 900px;
+  margin: 16px auto;
+
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 32px;
+
+  position: relative;
+}
+
+.app-page__header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.app-a {
+  color: #00bcd4;
+  transition: 0.25s;
+  cursor: pointer;
+  margin-right: 0;
+  margin-left: 1em;
+  text-decoration: none;
+}
+
+.app-a:hover {
+  color: #008ba3;
+}
+
+.app-a_active {
+  color: #008ba3;
+}
+
+.app-page__footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigation {
+  padding: 20px 0;
+}
