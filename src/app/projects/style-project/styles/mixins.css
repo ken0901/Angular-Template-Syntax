@@ -1,0 +1,12 @@
+@import "./colors.css";
+
+.shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.card {
+    padding: 32px;
+    background: var(--base);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,49 @@
+base {
+  --base: #fafafa;
+}
+
+base-dark {
+  --base-dark: #e0e0e0;
+}
+
+base-light {
+  --base-light: #ffffff;
+}
+
+primary {
+  --primary: #00bcd4;
+}
+primary-dark {
+  --primary-dark: #008ba3;
+}
+primary-light {
+  --primary-light: #62efff;
+}
+on-primary {
+  --on-primary: #ffffff;
+}
+secondary {
+  --secondary: #ffd54f;
+}
+secondary-dark {
+  --secondary-dark: #c8a415;
+}
+secondary-light {
+  --secondary-light: #ffff81;
+}
+on-secondary {
+  --on-secondary: #000000;
+}
+error {
+  --error: #b00020;
+}
+on-error {
+  --on-error: #ffffff;
+}
+
+success {
+  --success: #99aa00;
+}
+on-success {
+  --on-success: #ffffff;
+}

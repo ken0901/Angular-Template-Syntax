@@ -1,0 +1,16 @@
+@import "../colors.css";
+
+.app-a {
+    color: var(primary);
+    transition: 0.25s;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+.app-a:hover {
+    color: var(primary-dark);
+}
+
+.app-a:active {
+    color: var(primary-dark);
+}

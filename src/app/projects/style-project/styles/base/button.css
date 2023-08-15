@@ -1,0 +1,17 @@
+@import "../colors.css";
+
+.app-button {
+  padding: 8px 20px;
+
+  background: transparent;
+  border-radius: 25px;
+  border: 2px solid var(primary);
+  transition: 0.25s;
+  margin: 0 4px;
+}
+
+.app-button:hover,:focus {
+  background: var(primary);
+  border: 2px solid var(primary);
+  color: var(on-primary);
+}

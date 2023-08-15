@@ -1,0 +1,24 @@
+@import "../colors.css";
+
+.app-page {
+  max-width: 900px;
+  margin: 16px auto;
+
+  background: var(base-light);
+  border: 1px solid var(base-dark);
+  border-radius: 8px;
+  padding: 32px;
+
+  position: relative;
+}
+
+.app-page.header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.app-page.content.footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}

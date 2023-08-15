@@ -40,6 +40,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 import { environment } from 'src/environments/environment';
+import { StyleProjectComponent } from './projects/style-project/style-project.component';
 
 @NgModule({
     declarations: [
@@ -62,6 +63,7 @@ import { environment } from 'src/environments/environment';
         EmailFormComponent,
         MathGameComponent,
         EmailClientComponent,
+        StyleProjectComponent,
     ],
     imports: [
         BrowserModule,
