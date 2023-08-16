@@ -14,15 +14,15 @@
 
   background: transparent;
   border-radius: 25px;
-  border: 2px solid var(primary);
+  border: 2px solid #00bcd4;
   transition: 0.25s;
   margin: 0 4px;
 }
 
 .app-button:hover,
 :focus {
-  background: var(primary);
-  border: 2px solid var(primary);
+  background: #00bcd4;
+  border: 2px solid #00bcd4;
   color: var(on-primary);
 }
 
@@ -37,7 +37,7 @@
 }
 
 .app-input:focus {
-  border: 1px solid var(primary-dark);
+  border: 1px solid #008ba3;
 }
 
 .app-input:disabled {
@@ -46,14 +46,12 @@
   color: rgba(0, 0, 0, 0.38);
 }
 
-@import "../fonts.css";
-
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(base-font-family);
+    font-family: "Roboto", sans-serif;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: var(base-font-family);
+    font-family: "Roboto", sans-serif;
 }
 
 h1, .h1 {
