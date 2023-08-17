@@ -9,6 +9,7 @@
         [required]="true"
         [control]="form.controls.input"
         [isInline]="isInline"
+        [patternError]="regexErrors.email"
     >
         <app-input formControlName="input"></app-input>
     </app-form-field>
