@@ -17,3 +17,7 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     color: rgba(0, 0, 0, 0.38);
   }
+
+  :host-context(.form-field_error) input {
+    border: 1px solid #b00020;;
+  }
