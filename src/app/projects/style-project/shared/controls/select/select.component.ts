@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@ang
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ControlItem, Value } from '../../../models/frontend';
-import { MatSelectChange } from '@angular/material/select';
 export { ControlItem, Value } from '../../../models/frontend';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-select',
