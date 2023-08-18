@@ -2,8 +2,8 @@
 /* @import 'bulma/css/bulma.css'; */
 /* @import "bootstrap/dist/css/bootstrap.css"; */
 /* @import 'semantic-ui-css/semantic.min.css'; */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* .searchmatch {
     font-weight: bold;
 } */
-

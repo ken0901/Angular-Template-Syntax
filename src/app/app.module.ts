@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,6 @@ import { CreditCardModule } from './projects/credit-card/module/credit-card/cred
 import { ClassDirective } from './projects/directives/class.directive';
 import { DirectivesComponent } from './projects/directives/directives.component';
 import { TimesDirective } from './projects/directives/times.directive';
-import { EmailClientModule } from './projects/email-client/module/email-client.module';
 import { EmailFormComponent } from './projects/email-form/email-form.component';
 import { EmailFormModule } from './projects/email-form/module/email-form/email-form.module';
 import { LandingModule } from './projects/landing/module/landing/landing.module';
@@ -55,6 +55,7 @@ import { StyleProjectModule } from './projects/style-project/module/main/style-p
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule,
         SearchModule,
