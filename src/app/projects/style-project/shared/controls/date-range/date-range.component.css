@@ -1,0 +1,14 @@
+.date-range__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-range__dash {
+    display: block;
+    padding-right: 12px;
+}
+
+:host-context(.form-field_error) input {
+    border: 1px solid #b00020;
+  }
