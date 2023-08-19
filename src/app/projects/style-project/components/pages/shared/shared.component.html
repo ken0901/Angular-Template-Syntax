@@ -54,6 +54,16 @@
         <app-radios formControlName="radios" [items]="items"></app-radios>
     </app-form-field>
 
+    <app-form-field
+        label="Date"
+        [required]="true"
+        [control]="form.controls.date"
+        [isInline]="isInline"
+
+    >
+        <app-date formControlName="date" placeholder="Date"></app-date>
+    </app-form-field>
+
 
 </form>
 

@@ -20,6 +20,21 @@ import { DemoModule } from '../../components/pages/demo/demo.module';
 import { SharedModule } from '../../components/pages/shared/shared.module';
 import { StylesModule } from '../../components/pages/styles/styles.module';
 
+// Date
+import { MatNativeDateModule, MatDateFormats, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
+const APP_DATE_FORMATS: MatDateFormats = {
+  parse: {
+    dateInput: { day: 'numeric', month: 'numeric', year: 'numeric'},
+  },
+  display: {
+    dateInput: { day: 'numeric', month: 'numeric', year: 'numeric'},
+    monthYearLabel: {year: 'numeric', month: 'short'},
+    dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},
+    monthYearA11yLabel: {year: 'numeric', month: 'long'}
+  }
+}
+
 @NgModule({
   declarations: [
     StyleProjectComponent,
@@ -31,6 +46,7 @@ import { StylesModule } from '../../components/pages/styles/styles.module';
     DemoModule,
     SharedModule,
     StylesModule,
+    MatNativeDateModule,
     provideFirebaseApp(() => initializeApp(environment.firebase.config)),
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
@@ -41,6 +57,8 @@ import { StylesModule } from '../../components/pages/styles/styles.module';
     HeaderComponent,
   ],
   providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+    {provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS},
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase.config}
   ]
 })
