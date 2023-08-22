@@ -35,6 +35,15 @@
     </app-form-field>
     
     <app-form-field
+        label="Autocomplete"
+        [required]="true"
+        [control]="form.controls.autocomplete"
+        [isInline]="isInline"
+    >
+        <app-autocomplete formControlName="autocomplete" [items]="items"></app-autocomplete>
+    </app-form-field>
+
+    <app-form-field
         label="Checkboxes"
         [required]="true"
         [control]="form.controls.checkboxes"
