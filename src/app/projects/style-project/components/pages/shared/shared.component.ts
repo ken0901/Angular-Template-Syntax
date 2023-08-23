@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { markFormGroupTouched, regex, regexErrors } from '../../../shared';
 import { ControlItem } from '../../../models/frontend';
+import { NotificationService } from '../../../services';
 
 @Component({
   selector: 'app-shared',
@@ -16,7 +17,8 @@ export class SharedComponent implements OnInit {
 
   items: ControlItem[];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private notificationService: NotificationService) {
     this.isInline = true;
 
     this.items = [
@@ -124,10 +126,10 @@ export class SharedComponent implements OnInit {
   }
 
   onError(): void {
-
+    this.notificationService.error('Everything is fine!');
   }
 
   onSuccess(): void {
-
+    this.notificationService.success('Oops! Something is wrong');
   }
 }

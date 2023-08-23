@@ -7,3 +7,12 @@
 /* .searchmatch {
     font-weight: bold;
 } */
+.mat-snackbar_error {
+    background: #b00020;
+    color: #ffffff;
+}
+
+.mat-snackbar_success {
+    background: #99aa00;
+    color: #ffffff;
+}

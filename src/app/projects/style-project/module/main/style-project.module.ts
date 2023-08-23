@@ -22,6 +22,7 @@ import { StylesModule } from '../../components/pages/styles/styles.module';
 
 // Date
 import { MatNativeDateModule, MatDateFormats, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { NotificationModule } from '../../services';
 
 const APP_DATE_FORMATS: MatDateFormats = {
   parse: {
@@ -33,7 +34,10 @@ const APP_DATE_FORMATS: MatDateFormats = {
     dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},
     monthYearA11yLabel: {year: 'numeric', month: 'long'}
   }
-}
+};
+
+// Services
+
 
 @NgModule({
   declarations: [
@@ -47,6 +51,7 @@ const APP_DATE_FORMATS: MatDateFormats = {
     SharedModule,
     StylesModule,
     MatNativeDateModule,
+    NotificationModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebase.config)),
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
