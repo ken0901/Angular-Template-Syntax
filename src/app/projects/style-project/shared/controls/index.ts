@@ -8,3 +8,4 @@ export * from './radios/radios.module';
 export * from './date/date.module';
 export * from './date-range/date-range.module';
 export * from './autocomplete/autocomplete.module';
+export * from './spinner/spinner.module';

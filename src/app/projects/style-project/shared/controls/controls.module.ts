@@ -9,6 +9,7 @@ import { RadiosModule } from './radios/radios.module';
 import { DateModule } from './date/date.module';
 import { DateRangeModule } from './date-range/date-range.module';
 import { AutocompleteModule } from './autocomplete/autocomplete.module';
+import { SpinnerModule } from './spinner/spinner.module';
 
 
 
@@ -24,7 +25,8 @@ import { AutocompleteModule } from './autocomplete/autocomplete.module';
     RadiosModule,
     DateModule,
     DateRangeModule,
-    AutocompleteModule
+    AutocompleteModule,
+    SpinnerModule
   ],
   exports: [
     InputModule,
@@ -35,7 +37,8 @@ import { AutocompleteModule } from './autocomplete/autocomplete.module';
     RadiosModule,
     DateModule,
     DateRangeModule,
-    AutocompleteModule
+    AutocompleteModule,
+    SpinnerModule
   ]
 })
 export class ControlsModule { }

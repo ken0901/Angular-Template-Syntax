@@ -12,6 +12,7 @@ export class SharedComponent implements OnInit {
   form: FormGroup;
   isInline: boolean;
   regexErrors = regexErrors;
+  showSpinner = false;
 
   items: ControlItem[];
 
@@ -116,5 +117,17 @@ export class SharedComponent implements OnInit {
     }else {
       this.form.enable();
     }
+  }
+
+  onToggleSpinner(): void {
+    this.showSpinner = !this.showSpinner;
+  }
+
+  onError(): void {
+
+  }
+
+  onSuccess(): void {
+
   }
 }
