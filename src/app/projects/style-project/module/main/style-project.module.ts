@@ -36,8 +36,14 @@ const APP_DATE_FORMATS: MatDateFormats = {
   }
 };
 
-// Services
+// Services - not working, move to App module.
 
+// Store
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+const StoreDevtools = !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }): [];
+import { reducers, effects } from '../../store';
 
 @NgModule({
   declarations: [
@@ -56,6 +62,14 @@ const APP_DATE_FORMATS: MatDateFormats = {
     provideAuth(() => getAuth()),
     provideStorage(() => getStorage()),
     provideFirestore(() => getFirestore()),
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    EffectsModule.forRoot(effects),
+    StoreDevtools
   ],
   exports:[
     StyleProjectComponent,
