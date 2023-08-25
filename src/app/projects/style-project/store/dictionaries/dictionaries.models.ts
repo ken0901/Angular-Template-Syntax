@@ -1,4 +1,5 @@
-import { ControlItem, Item } from "../../models/frontend";
+import { ControlItem, Item } from '../../models/frontend';
+export { ControlItem, Item } from '../../models/frontend';
 
 export interface Dictionaries {
     roles: Dictionary;
@@ -11,3 +12,4 @@ export interface Dictionary {
     items: Item[];
     controlItems: ControlItem[];
 }
+
