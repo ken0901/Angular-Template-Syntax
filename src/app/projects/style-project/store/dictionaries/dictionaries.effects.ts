@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Effect, Actions, ofType, createEffect } from '@ngrx/effects';
+import { Actions, ofType, createEffect } from '@ngrx/effects';
 
 import { AngularFirestore, DocumentChangeAction } from "@angular/fire/compat/firestore";
 
