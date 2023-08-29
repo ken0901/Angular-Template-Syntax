@@ -42,7 +42,7 @@ export class UserEffects {
                     ),
                     catchError(err => {
                         this.notification.error(err.message); 
-                        return of(new fromActions.SignInEmail(err.message));
+                        return of(new fromActions.SignInEmailError(err.message));
                     })    
                 )
             )
@@ -70,5 +70,20 @@ export class UserEffects {
                 )
             )
         );
+    });
+
+    signOut: Observable<Action> = createEffect(() => {
+        return this.actions.pipe(
+            ofType(fromActions.Types.SIGN_OUT),
+            switchMap(credentials => 
+                from (this.afAuth.signOut()).
+                pipe(
+                    map(() => new fromActions.SignOutSuccess()),
+                    catchError(err => {
+                        return of(new fromActions.SignOutError(err.message));
+                    })    
+                )
+            )
+        )
     });
 }
