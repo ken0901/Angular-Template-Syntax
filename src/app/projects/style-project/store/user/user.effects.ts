@@ -26,6 +26,28 @@ export class UserEffects {
                 private afs: AngularFirestore,
                 private router: Router,
                 private notification: NotificationService){}
+    
+    signInEmail: Observable<Action> = createEffect(() => {
+        return this.actions.pipe(
+            ofType(fromActions.Types.SIGN_IN_EMAIL),
+            map((action: fromActions.SignInEmail) => action.credentials),
+            switchMap(credentials => 
+                from (this.afAuth.signInWithEmailAndPassword(credentials.email, credentials.password)).
+                pipe(
+                    switchMap(signInState => 
+                        this.afs.doc<User>(`users/${signInState.user.uid}`).valueChanges().pipe(
+                            take(1),
+                            map(user => new fromActions.SignInEmailSuccess(signInState.user.uid, user || null))
+                        )
+                    ),
+                    catchError(err => {
+                        this.notification.error(err.message); 
+                        return of(new fromActions.SignInEmail(err.message));
+                    })    
+                )
+            )
+        );
+    });
 
     signUpEmail: Observable<Action> = createEffect(() => {
         return this.actions.pipe(
@@ -47,6 +69,6 @@ export class UserEffects {
                     })    
                 )
             )
-        )
+        );
     });
 }
