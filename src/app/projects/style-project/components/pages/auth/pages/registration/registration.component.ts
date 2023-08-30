@@ -17,11 +17,14 @@ import * as fromUser from '../../../../../store/user';
 export class RegistrationComponent implements OnInit {
   form: FormGroup;
   regexErrors = regexErrors;
+  loading$: Observable<boolean>;
 
   constructor(private fb: FormBuilder,
               private store: Store<fromRoot.State>) { }
 
   ngOnInit(): void {
+    this.loading$ = this.store.pipe(select(fromUser.getLoading));
+
     this.form = this.fb.group({
       email: [null, {
         updateOn: 'blur', validators: [

@@ -41,4 +41,6 @@
             <app-button type="submit">Complete</app-button>
         </div>
     </form>
+
+    <app-spinner *ngIf="loading$ | async"></app-spinner>
 </div>
