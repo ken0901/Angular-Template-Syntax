@@ -61,6 +61,12 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit(): void{
     if(this.form.valid){
+      const value = this.form.value;
+      const credentials: fromUser.EmailPasswordCredentials = {
+        email: value.email,
+        password: value.password
+      };
+      this.store.dispatch(new fromUser.SignUpEmail(credentials));
 
     }else{
       markFormGroupTouched(this.form);
