@@ -28,7 +28,7 @@ export function reducer(state = initialState, action: fromActions.All): UserStat
         }
         
         case fromActions.Types.INIT_UNAUTHORIZED: {
-            return {...state, entity:null,  loading:true, error:null};
+            return {...state, entity:null,  loading:false, error:null};
         }
         
         case fromActions.Types.INIT_ERROR: {
