@@ -16,6 +16,7 @@ import { User } from "./user.models";
 import * as fromActions from './user.actions';
 
 import { NotificationService } from "../../services";
+import { authState } from "@angular/fire/auth";
 
 type Action = fromActions.All;
 
@@ -27,6 +28,24 @@ export class UserEffects {
                 private router: Router,
                 private notification: NotificationService){}
     
+    init: Observable<Action> = createEffect(() => {
+        return this.actions.pipe(
+            ofType(fromActions.Types.INIT),
+            switchMap(() => this.afAuth.authState.pipe(take(1))),
+            switchMap(authState => {
+                if(authState){
+                    return this.afs.doc<User>(`users/${authState.uid}`).valueChanges().pipe(
+                        take(1),
+                        map(user => new fromActions.InitAuthorized(authState.uid, user || null)),
+                        catchError(err => of(new fromActions.InitError(err.message)))
+                    );
+                }else{
+                    return of(new fromActions.InitUnAuthorized());
+                }
+            })
+        );
+    });
+
     signInEmail: Observable<Action> = createEffect(() => {
         return this.actions.pipe(
             ofType(fromActions.Types.SIGN_IN_EMAIL),

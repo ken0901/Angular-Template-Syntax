@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Store } from '@ngrx/store';
 import * as fromRoot from './store';
 import * as fromDictionaries from './store/dictionaries';
+import * as fromUser from './store/user';
 
 @Component({
   selector: 'style-project',
@@ -15,6 +16,7 @@ export class StyleProjectComponent implements OnInit {
   constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(new fromUser.Init);
     this.store.dispatch(new fromDictionaries.Read());
     // this.afs.collection('test').snapshotChanges().subscribe(data => {
     //   console.log(data.map(x => x.payload.doc.data()));
