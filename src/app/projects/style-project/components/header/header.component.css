@@ -28,6 +28,7 @@
     font-size: 1.2em;
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .header__navigation {
