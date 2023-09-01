@@ -42,9 +42,13 @@
 
 .file__label {
     color: #00bcd4;
+    font-weight:bold;
+    font-size: 20px;
 }
 
 .file__label:hover {
     color: #008ba3;
     cursor: pointer;
+    font-weight:bold;
+    font-size: 20px;
 }

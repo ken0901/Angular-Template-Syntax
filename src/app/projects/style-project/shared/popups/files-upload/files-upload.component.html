@@ -3,7 +3,8 @@
         <h3>Files uploading</h3>
     </div>
     <div class="files-upload__content">
-        <div class="dropzone">
+
+        <div class="dropzone" appDropZone (hovered)="toggleHover($event)" [class.dropzone_hovered]="isHovering">
             <span class="dropzone_label">Drop files here or</span>
             <div class="dropzone__file">
 

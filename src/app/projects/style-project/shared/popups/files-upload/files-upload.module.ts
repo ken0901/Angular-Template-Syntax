@@ -5,11 +5,13 @@ import { FilesUploadComponent } from './files-upload.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { DropZoneDirective } from './directives/drop-zone/drop-zone.directive';
 
 @NgModule({
   declarations: [
     FilesUploadDirective,
-    FilesUploadComponent
+    FilesUploadComponent,
+    DropZoneDirective
   ],
   imports: [
     CommonModule,
