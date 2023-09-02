@@ -1,0 +1,17 @@
+.cropper__content {
+    height: 260px;
+}
+
+.cropper__actions {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    color: #00bcd4;
+}
+
+.button:hover {
+    color: #008ba3;
+    cursor: pointer;
+}

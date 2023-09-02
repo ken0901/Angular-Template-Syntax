@@ -26,11 +26,15 @@
                 Choose only one file
             </div>
         </ng-container>
+
+        <ng-container *ngIf="imageFile">
+            <app-cropper [imageFile]="imageFile" (changed)="onCrop($event)"></app-cropper>
+        </ng-container>
         <ng-container *ngIf="files">
             <app-upload *ngFor="let file of files" [file]="file" (completed)="onUploadComplete($event)"></app-upload>
         </ng-container>
     </div>
-    <div class="files-upload__footer">
+    <div class="files-upload__footer" *ngIf="!imageFile">
         <button class="app-button" (click)="onClose()" *ngIf="!filesURLs.length">Close</button>
         <button class="app-button" (click)="onComplete()" *ngIf="filesURLs.length">Complete</button>
     </div>

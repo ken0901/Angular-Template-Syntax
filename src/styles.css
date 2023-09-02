@@ -16,3 +16,7 @@
     background: #99aa00;
     color: #ffffff;
 }
+
+image-cropper.source-image {
+    margin: 0 auto;
+}
