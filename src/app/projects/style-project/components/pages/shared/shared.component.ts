@@ -132,4 +132,8 @@ export class SharedComponent implements OnInit {
   onSuccess(): void {
     this.notificationService.success('Oops! Something is wrong');
   }
+
+  onFilesChange(urls: string | string[]): void {
+    console.log('urls = ', urls);
+  }
 }

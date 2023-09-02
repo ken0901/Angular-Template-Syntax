@@ -1,60 +1,78 @@
 .files-upload {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .files-upload__header {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .files-upload__content {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .files-upload__footer {
-    display: inline-flex;
-    flex-direction: row-reverse;
-    margin-top: 12px;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  margin-top: 12px;
 }
 
 .dropzone {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      border: 2px dashed #62efff;
-      border-radius: 4px;
-      padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed #62efff;
+  border-radius: 4px;
+  padding: 20px;
 }
 
 .dropzone_hovered {
-    border: 2px solid #00bcd4;
+  border: 2px solid #00bcd4;
 }
 
-.dropzone_hovered .dropzone__label, .dropzone__file {
-    opacity: 0.3;
+.dropzone_hovered .dropzone__label,
+.dropzone__file {
+  opacity: 0.3;
 }
 
 .file__input {
-    display: none;
+  display: none;
 }
 
 .file__label {
-    color: #00bcd4;
-    font-weight:bold;
-    font-size: 20px;
+  color: #00bcd4;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .file__label:hover {
-    color: #008ba3;
-    cursor: pointer;
-    font-weight:bold;
-    font-size: 20px;
+  color: #008ba3;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .error {
-    color: #b00020;
-    text-align: center;
-    padding: 12px;
+  color: #b00020;
+  text-align: center;
+  padding: 12px;
+}
+
+.app-button {
+  padding: 8px 20px;
+
+  background: transparent;
+  border-radius: 25px;
+  border: 2px solid var(primary);
+  transition: 0.25s;
+  margin: 0 4px;
+}
+
+.app-button:hover,
+:focus {
+  background: var(primary);
+  border: 2px solid var(primary);
+  color: var(on-primary);
 }
