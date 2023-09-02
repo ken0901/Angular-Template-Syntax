@@ -1,0 +1,41 @@
+.app-a {
+    color: #00bcd4;
+    transition: 0.25s;
+    cursor: pointer;
+    margin-right: 0;
+    margin-left: 1em;
+    text-decoration: none;
+  }
+  
+  .app-a:hover {
+    color: #008ba3;
+  }
+  
+  .app-a_active {
+    color: #008ba3;
+  }
+
+  .upload {
+    padding: 12px;
+    border-radius: 4px;
+    background: rgba(0,0,0, 0.05);
+    margin-top: 12px;
+  }
+
+  .upload__progress {
+    width: 100%;
+  }
+
+  .upload__progress::-webkit-progress-value {
+    transition: width 0.1s ease;
+  }
+
+  .upload__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button {
+    display: inline-block;
+    margin: 2px 4px;
+  }

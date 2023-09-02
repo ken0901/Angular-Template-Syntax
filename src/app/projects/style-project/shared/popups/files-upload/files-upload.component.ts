@@ -41,5 +41,11 @@ export class FilesUploadComponent implements OnInit {
     for(let i=0; i<files.length; i++){
       this.files.push(files.item(i));
     }
+
+    console.log(files);
+  }
+
+  onUploadComplete(url: string): void {
+    this.filesURLs.push(url);
   }
 }
