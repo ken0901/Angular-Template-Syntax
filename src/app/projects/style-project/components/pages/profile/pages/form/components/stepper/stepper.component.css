@@ -45,7 +45,7 @@
     color: #c8a415;
 }
 
-.step__active.step__icon {
+.step__active .step__icon {
     background-color: #ffd54f;
     border-color: #ffd54f;
     color: #000000;
@@ -57,3 +57,20 @@
     border-bottom: 1px solid #e0e0e0;
     flex-grow: 1;
 }
+
+.app-button {
+    padding: 8px 20px;
+  
+    background: transparent;
+    border-radius: 25px;
+    border: 2px solid #00bcd4;
+    transition: 0.25s;
+    margin: 0 4px;
+  }
+  
+  .app-button:hover,
+  :focus {
+    background: #00bcd4;
+    border: 2px solid #00bcd4;
+    color: var(on-primary);
+  }
