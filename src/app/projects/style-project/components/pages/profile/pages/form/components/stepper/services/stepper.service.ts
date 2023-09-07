@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 export interface Step {
   key: string;
@@ -14,7 +16,30 @@ export class StepperService {
   steps: Step[];
   activeStep: ActiveStep;
 
-  constructor() { }
+  next = new Subject<boolean>();
+  next$: Observable<boolean>;
+
+  prev = new Subject<void>();
+  prev$ = this.prev.asObservable();
+
+  complete = new Subject<boolean>();
+  complete$: Observable<boolean>;
+
+  cancel = new Subject<void>();
+  cancel$ = this.cancel.asObservable();
+
+  check = new Subject<'next' | 'complete'>();
+  check$ = this.check.asObservable();
+
+  constructor() {
+    this.next$ = this.next.asObservable().pipe(
+      filter(isOk => isOk)
+    );
+    
+    this.complete$ = this.complete.asObservable().pipe(
+      filter(isOk => isOk)
+    );
+  }
 
   init(steps: Step[]): void {
     this.steps = steps;
