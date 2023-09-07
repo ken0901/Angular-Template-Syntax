@@ -1,4 +1,4 @@
-import { ControlItem, Item } from '../../models/frontend';
+import { ControlItem, Item, Icon } from '../../models/frontend';
 export { ControlItem, Item } from '../../models/frontend';
 
 export interface Dictionaries {

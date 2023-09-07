@@ -6,6 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
 import * as fromRoot from '../../../../../store';
 import * as fromDictionaries from '../../../../../store/dictionaries';
+import { PersonalForm } from './components/personal/personal.component';
 
 @Component({
   selector: 'app-form',
@@ -46,4 +47,7 @@ export class FormComponent implements OnInit, OnDestroy {
     this.destory.complete();
   }
 
+  onChangedPersonal(data: PersonalForm): void {
+    console.log('personal changed = ', data);
+  }
 }
