@@ -11,6 +11,7 @@ import { FormComponent } from './form.component';
 import { StepperModule } from './components';
 import { PersonalComponent } from './components/personal/personal.component';
 import { ProfessionalComponent } from './components/professional/professional.component';
+import { UserPhotoModule } from 'src/app/projects/style-project/shared';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProfessionalComponent } from './components/professional/professional.co
     InputModule,
     AutocompleteModule,
     FilesUploadModule,
-    SpinnerModule
+    SpinnerModule,
+    UserPhotoModule
   ]
 })
 export class FormModule { }
