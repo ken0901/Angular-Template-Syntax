@@ -7,6 +7,7 @@ import { Store, select } from '@ngrx/store';
 import * as fromRoot from '../../../../../store';
 import * as fromDictionaries from '../../../../../store/dictionaries';
 import { PersonalForm } from './components/personal/personal.component';
+import { ProfessionalForm } from './components/professional/professional.component';
 
 @Component({
   selector: 'app-form',
@@ -49,5 +50,9 @@ export class FormComponent implements OnInit, OnDestroy {
 
   onChangedPersonal(data: PersonalForm): void {
     console.log('personal changed = ', data);
+  }
+
+  onChangedProfessional(data: ProfessionalForm): void {
+    console.log('Professional changed = ', data);
   }
 }

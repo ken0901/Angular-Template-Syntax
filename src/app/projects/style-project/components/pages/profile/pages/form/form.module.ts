@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { FormFieldModule, InputModule, AutocompleteModule } from '../../../../../shared/controls';
+import { FormFieldModule, InputModule, AutocompleteModule, SelectModule, CheckboxesModule, RadiosModule, DateRangeModule } from '../../../../../shared/controls';
 import { FilesUploadModule } from '../../../../../shared/popups';
 import { SpinnerModule } from '../../../../../shared/controls';
 
@@ -30,7 +30,11 @@ import { UserPhotoModule } from 'src/app/projects/style-project/shared';
     AutocompleteModule,
     FilesUploadModule,
     SpinnerModule,
-    UserPhotoModule
+    UserPhotoModule,
+    SelectModule,
+    RadiosModule,
+    CheckboxesModule,
+    DateRangeModule
   ]
 })
 export class FormModule { }

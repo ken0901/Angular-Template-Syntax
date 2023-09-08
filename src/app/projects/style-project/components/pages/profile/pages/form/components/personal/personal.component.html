@@ -15,7 +15,7 @@
     </app-form-field>
 
     <app-form-field label="Country" [required]="true" [control]="form.controls.country">
-        <app-autocomplete formControlName="country" [items]="item"></app-autocomplete>
+        <app-autocomplete formControlName="country" [items]="dictionaries.countries.controlItems"></app-autocomplete>
     </app-form-field>
 
 </form>

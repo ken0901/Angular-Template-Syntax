@@ -1,29 +1,87 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { Subject } from 'rxjs';
 import { StepperService } from '../stepper/services';
 import { takeUntil } from 'rxjs/operators';
 
+import {
+  regex,
+  regexErrors,
+} from '../../../../../shared/../../../shared/utils';
+import {
+  ControlItem,
+  Dictionaries,
+} from '../../../../../../../store/dictionaries';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { markFormGroupTouched } from '../../../../../shared/../../../shared/utils';
+
+export interface ProfessionalForm {
+  about: string;
+  roleId: string;
+  // role: EmployeeForm | RecruiterForm
+}
+
 @Component({
   selector: 'app-professional',
   templateUrl: './professional.component.html',
-  styleUrls: ['./professional.component.css']
+  styleUrls: ['./professional.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfessionalComponent implements OnInit, OnDestroy {
+  @Input() value: ProfessionalForm;
+  @Input() dictionaries: Dictionaries;
 
-  private destory = new Subject<any>();
+  @Output() changed = new EventEmitter<ProfessionalForm>();
   
-  constructor(private stepper: StepperService) { }
+  private destory = new Subject<any>();
+  form: FormGroup;
+  regexErrors = regexErrors;
+
+  constructor(private stepper: StepperService,
+              private fb: FormBuilder,
+              private cdr: ChangeDetectorRef,) {}
 
   ngOnInit(): void {
+
+    this.form = this.fb.group({
+      roleId: [null, {
+        updateOn: 'change', validators: [
+          Validators.required
+        ]
+      }],
+      about: [null, {
+        updateOn: 'blur', validators: [
+          Validators.required
+        ]
+      }]
+    });
+
+    if(this.value){
+      this.form.patchValue(this.value);
+    }
+
     this.stepper.check$.pipe(takeUntil(this.destory)).subscribe((type) => {
-      // type === 'complete'
+      if(!this.form.valid){
+        markFormGroupTouched(this.form);
+        this.form.updateValueAndValidity();
+        this.cdr.detectChanges();
+      }else{
+        this.changed.emit(this.form.value);
+      }
       this.stepper[type].next(true);
     });
   }
-  
+
   ngOnDestroy(): void {
     this.destory.next();
     this.destory.complete();
   }
-
 }

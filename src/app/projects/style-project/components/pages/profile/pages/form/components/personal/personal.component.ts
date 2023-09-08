@@ -73,16 +73,6 @@ export class PersonalComponent implements OnInit, OnDestroy {
         },
       ],
     });
-    console.log(this.dictionaries === undefined);
-    if(this.dictionaries === undefined) {
-      this.item = [
-        { label: 'First', value: 1},
-        { label: 'Second', value: 2},
-        { label: 'Third', value: 3},
-        { label: 'Fourth', value: 4},
-        { label: 'fifth', value: 5}
-      ];
-    }
 
     if (this.value) {
       this.form.patchValue(this.value);
