@@ -12,13 +12,17 @@ import { StepperModule } from './components';
 import { PersonalComponent } from './components/personal/personal.component';
 import { ProfessionalComponent } from './components/professional/professional.component';
 import { UserPhotoModule } from 'src/app/projects/style-project/shared';
+import { EmployeeComponent } from './components/professional/roles/employee/employee.component';
+import { RecruiterComponent } from './components/professional/roles/recruiter/recruiter.component';
 
 
 @NgModule({
   declarations: [
     FormComponent,
     PersonalComponent,
-    ProfessionalComponent
+    ProfessionalComponent,
+    EmployeeComponent,
+    RecruiterComponent
   ],
   imports: [
     CommonModule,

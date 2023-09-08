@@ -50,7 +50,7 @@ export class DictionariesEffects {
                         take(1),
                         map(items => items.map(x => documentToItem(x)))
                     ),
-                    this.afs.collection('qualifications').snapshotChanges().pipe(
+                    this.afs.collection('qualification').snapshotChanges().pipe(
                         take(1),
                         map(items => items.map(x => documentToItem(x)))
                     ),
@@ -68,11 +68,11 @@ export class DictionariesEffects {
                         })
                     ))
                 ).pipe(
-                    map(([roles, specializations, qualifications, skills, countries]) => {
+                    map(([roles, specializations, qualification, skills, countries]) => {
                         const dictionaries: Dictionaries = {
                             roles: addDictionary(roles),
                             specializations: addDictionary(specializations),
-                            qualifications: addDictionary(qualifications),
+                            qualification: addDictionary(qualification),
                             skills: addDictionary(skills),
                             countries: addDictionary(countries)
                         };

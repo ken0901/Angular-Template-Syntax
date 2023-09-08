@@ -22,11 +22,14 @@ import {
 } from '../../../../../../../store/dictionaries';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { markFormGroupTouched } from '../../../../../shared/../../../shared/utils';
+import { RecruiterForm } from './roles/recruiter/recruiter.component';
+import { EmployeeForm } from './roles/employee/employee.component';
 
 export interface ProfessionalForm {
   about: string;
   roleId: string;
-  // role: EmployeeForm | RecruiterForm
+  roleRecruiter: RecruiterForm;
+  roleEmployee: EmployeeForm; 
 }
 
 @Component({
@@ -57,11 +60,7 @@ export class ProfessionalComponent implements OnInit, OnDestroy {
           Validators.required
         ]
       }],
-      about: [null, {
-        updateOn: 'blur', validators: [
-          Validators.required
-        ]
-      }]
+      about: [null]
     });
 
     if(this.value){

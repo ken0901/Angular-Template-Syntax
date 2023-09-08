@@ -24,9 +24,9 @@ export const getRoles = createSelector(
     (state) => state.roles
 );
 
-export const getQualifications = createSelector(
+export const getQualification = createSelector(
     getDictionaries,
-    (state) => state.qualifications
+    (state) => state.qualification
 );
 
 export const getSpecializations = createSelector(

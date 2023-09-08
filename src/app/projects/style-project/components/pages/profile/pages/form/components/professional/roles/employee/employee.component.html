@@ -1,0 +1,15 @@
+<form [formGroup]="form" novalidate autocomplete="off">
+    <app-form-field label="Expected Salary" [required]="true" [control]="form.controls.expectedSalary">
+        <app-input formControlName="expectedSalary"></app-input>
+    </app-form-field>
+    <app-form-field label="Specialization" [required]="true" [control]="form.controls.specialization">
+        <app-select formControlName="specialization" [items]="dictionaries.specializations.controlItems"></app-select>
+    </app-form-field>
+    <app-form-field label="Qualification" [required]="true" [control]="form.controls.qualification">
+        <app-select formControlName="qualification" [items]="dictionaries.qualification.controlItems"></app-select>
+    </app-form-field>
+    <app-form-field label="Skills" [required]="true" [control]="form.controls.skills">
+        <app-checkboxes formControlName="skills" [items]="dictionaries.skills.controlItems"></app-checkboxes>
+    </app-form-field>
+
+</form>
