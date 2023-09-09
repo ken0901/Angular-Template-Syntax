@@ -11,9 +11,10 @@ import { FormComponent } from './form.component';
 import { StepperModule } from './components';
 import { PersonalComponent } from './components/personal/personal.component';
 import { ProfessionalComponent } from './components/professional/professional.component';
-import { UserPhotoModule } from 'src/app/projects/style-project/shared';
+import { ButtonModule, UserPhotoModule } from 'src/app/projects/style-project/shared';
 import { EmployeeComponent } from './components/professional/roles/employee/employee.component';
 import { RecruiterComponent } from './components/professional/roles/recruiter/recruiter.component';
+import { ExperiencesComponent } from './components/professional/roles/employee/experiences/experiences.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RecruiterComponent } from './components/professional/roles/recruiter/re
     PersonalComponent,
     ProfessionalComponent,
     EmployeeComponent,
-    RecruiterComponent
+    RecruiterComponent,
+    ExperiencesComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { RecruiterComponent } from './components/professional/roles/recruiter/re
     SelectModule,
     RadiosModule,
     CheckboxesModule,
-    DateRangeModule
+    DateRangeModule,
+    ButtonModule
   ]
 })
 export class FormModule { }
