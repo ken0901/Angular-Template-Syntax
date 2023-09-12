@@ -9,6 +9,11 @@ import * as fromDictionaries from '../../../../../store/dictionaries';
 import { PersonalForm } from './components/personal/personal.component';
 import { ProfessionalForm } from './components/professional/professional.component';
 
+export interface ProfileForm {
+  personal: PersonalForm;
+  professional: ProfessionalForm;
+}
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
