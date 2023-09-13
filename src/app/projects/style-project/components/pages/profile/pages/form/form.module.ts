@@ -15,6 +15,7 @@ import { ButtonModule, UserPhotoModule } from 'src/app/projects/style-project/sh
 import { EmployeeComponent } from './components/professional/roles/employee/employee.component';
 import { RecruiterComponent } from './components/professional/roles/recruiter/recruiter.component';
 import { ExperiencesComponent } from './components/professional/roles/employee/experiences/experiences.component';
+import { MapperService } from './services';
 
 
 @NgModule({
@@ -42,6 +43,9 @@ import { ExperiencesComponent } from './components/professional/roles/employee/e
     CheckboxesModule,
     DateRangeModule,
     ButtonModule
+  ],
+  providers: [
+    MapperService
   ]
 })
 export class FormModule { }

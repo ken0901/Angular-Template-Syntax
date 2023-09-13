@@ -28,6 +28,7 @@ import { EmployeeForm } from './roles/employee/employee.component';
 export interface ProfessionalForm {
   about: string;
   roleId: string;
+  role: RecruiterForm | EmployeeForm;
   roleRecruiter: RecruiterForm;
   roleEmployee: EmployeeForm; 
 }
