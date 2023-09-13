@@ -23,7 +23,7 @@ import * as jsonCountries from '../../../../../../../../../../assets/countries.j
 
 export interface PersonalForm {
   name: string;
-  photo: string;
+  photoURL: string;
   country: string;
 }
 
