@@ -6,8 +6,11 @@ import { takeUntil } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
 import * as fromRoot from '../../../../../store';
 import * as fromDictionaries from '../../../../../store/dictionaries';
+import * as fromUser from '../../../../../store/user';
+
 import { PersonalForm } from './components/personal/personal.component';
 import { ProfessionalForm } from './components/professional/professional.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export interface ProfileForm {
   personal: PersonalForm;
@@ -25,12 +28,17 @@ export class FormComponent implements OnInit, OnDestroy {
   dictionaries$: Observable<fromDictionaries.Dictionaries>;
   dictionariesIsReady$: Observable<boolean>;
 
+  private user: fromUser.User;
   private destory = new Subject<any>();
 
   constructor(public stepper: StepperService,
-              private store: Store<fromRoot.State>) { }
+              private store: Store<fromRoot.State>,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
+    this.user = this.route.snapshot.data.user;
+
     this.dictionaries$ = this.store.pipe(select(fromDictionaries.getDictionaries));
     this.dictionariesIsReady$ = this.store.pipe(select(fromDictionaries.getIsReady));
 
