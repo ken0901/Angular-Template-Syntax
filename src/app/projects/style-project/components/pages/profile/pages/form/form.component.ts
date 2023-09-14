@@ -33,6 +33,8 @@ export class FormComponent implements OnInit, OnDestroy {
   personal$: Observable<PersonalForm>;
   professional$: Observable<ProfessionalForm>;
 
+  loading$: Observable<boolean>;
+
   private profile$: Observable<ProfileForm>;
   private user: fromUser.User;
   private isEditing: boolean;
@@ -55,6 +57,7 @@ export class FormComponent implements OnInit, OnDestroy {
     this.dictionaries$ = this.store.pipe(select(fromDictionaries.getDictionaries));
     this.dictionariesIsReady$ = this.store.pipe(select(fromDictionaries.getIsReady));
 
+    this.loading$ = this.store.pipe(select(fromUser.getLoading));
 
     if(this.user){
       const form = this.mapperService.userToForm(this.user);
@@ -74,13 +77,18 @@ export class FormComponent implements OnInit, OnDestroy {
     );
 
     this.stepper.cancel$.pipe(takeUntil(this.destory)).subscribe(() => {
-      console.log('cancelled');
+      this.router.navigate(['/profile', this.user.uid]);
     });
   }
 
   ngOnDestroy(): void {
     this.destory.next();
     this.destory.complete();
+    this.store.dispatch(new fromForm.Clear());
+  }
+
+  get title(): string {
+    return this.isEditing ? 'Edit Profile':'New Profile';
   }
 
   onChangedPersonal(data: PersonalForm): void {
