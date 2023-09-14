@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { User } from '../../store/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,10 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter
 })
 export class HeaderComponent implements OnInit {
   @Input() isAuthorized: boolean;
+  @Input() user: User;
   @Output() signOut = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,4 +22,8 @@ export class HeaderComponent implements OnInit {
     this.signOut.emit();
   }
 
+  onProfileNavigate(): void{
+    const path = this.user ? this.user.uid : 'new';
+    this.router.navigate(['/profile', path]);
+  }
 }

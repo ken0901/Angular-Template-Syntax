@@ -14,11 +14,13 @@ import { Observable } from 'rxjs';
 })
 export class StyleProjectComponent implements OnInit {
   isAuthorized$: Observable<boolean>;
+  user$: Observable<fromUser.User>;
 
   constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit(): void {
     this.isAuthorized$ = this.store.pipe(select(fromUser.getIsAuthorized));
+    this.user$ = this.store.pipe(select(fromUser.getUser));
 
     this.store.dispatch(new fromUser.Init);
     this.store.dispatch(new fromDictionaries.Read());

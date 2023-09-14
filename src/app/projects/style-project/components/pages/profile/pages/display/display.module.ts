@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DisplayRoutingModule } from './display-routing.module';
 import { DisplayComponent } from './display.component';
+import { UserPhotoModule } from 'src/app/projects/style-project/shared';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DisplayComponent } from './display.component';
   ],
   imports: [
     CommonModule,
-    DisplayRoutingModule
+    DisplayRoutingModule,
+    UserPhotoModule
   ]
 })
 export class DisplayModule { }
