@@ -1,0 +1,48 @@
+.employee {
+    margin-bottom: 16px;
+    display: flex;
+    padding: 32px;
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.employee__info {
+    margin-left: 20px;
+}
+
+.info__header {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+}
+
+.info__skills{
+    display: flex;
+}
+
+.skill {
+    display: block;
+    background: #ffd54f;
+    color: #000000;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.app-a {
+    color: #00bcd4;
+    transition: 0.25s;
+    cursor: pointer;
+    margin-right: 0;
+    margin-left: 1em;
+    text-decoration: none;
+}
+
+.app-a:hover {
+    color: #008ba3;
+}
+
+.app-a_active {
+    color: #008ba3;
+}
