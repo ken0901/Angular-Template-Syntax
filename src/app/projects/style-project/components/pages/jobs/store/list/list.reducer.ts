@@ -1,7 +1,7 @@
 import * as fromActions from './list.actions';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 
-import { Job } from './list.modles';
+import { Job } from './list.models';
 
 export const listAdapter = createEntityAdapter<Job>();
 

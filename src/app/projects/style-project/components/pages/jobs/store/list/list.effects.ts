@@ -7,7 +7,7 @@ import { Observable, from, of } from "rxjs";
 import { map, switchMap, catchError, take } from 'rxjs/operators';
 
 import { extractDocumentChangeActionData } from "src/app/projects/style-project/shared";
-import { Job, JobCreateRequest } from "./list.modles";
+import { Job, JobCreateRequest } from "./list.models";
 
 import * as fromActions from './list.actions';
 import { serverTimestamp } from "@angular/fire/firestore";

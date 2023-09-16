@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { Job, JobCreateRequest } from "./list.modles";
+import { Job, JobCreateRequest } from "./list.models";
 
 
 export enum Types {
