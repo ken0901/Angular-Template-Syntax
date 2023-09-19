@@ -9,10 +9,12 @@ import { effects, reducers } from './store';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { ButtonModule } from '../../../shared';
+import { JobComponent } from './components/job/job.component';
 
 @NgModule({
   declarations: [
-    JobsComponent
+    JobsComponent,
+    JobComponent
   ],
   imports: [
     CommonModule,

@@ -24,4 +24,12 @@ export class JobsComponent implements OnInit {
     this.store.dispatch(new fromList.Read());
   }
 
+  onEdit(value: Job): void{
+
+  }
+
+  onDelete(id: string): void {
+
+  }
+
 }
