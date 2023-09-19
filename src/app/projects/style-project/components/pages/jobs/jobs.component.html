@@ -6,10 +6,14 @@
         <app-job 
             *ngFor="let job of jobs$ | async" 
             [item]="job" 
-            [isEditable]="true"
+            [isEditable]="isEditable$ | async"
             (edit)="onEdit($event)"
             (delete)="onDelete($event)"
         >
         </app-job>
+    </div>
+
+    <div class="app-page__footer" *ngIf="isEditable$ | async">
+        <app-button (click)="onAdd()">Add</app-button>
     </div>
 </div>

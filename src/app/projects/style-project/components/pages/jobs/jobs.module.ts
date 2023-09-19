@@ -10,6 +10,7 @@ import { effects, reducers } from './store';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ButtonModule } from '../../../shared';
 import { JobComponent } from './components/job/job.component';
+import { FormModule } from './components/form/form.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { JobComponent } from './components/job/job.component';
     EffectsModule.forFeature(effects),
     JobsRoutingModule,
     MatDialogModule,
-    ButtonModule
+    ButtonModule,
+    FormModule
   ]
 })
 export class JobsModule { }
