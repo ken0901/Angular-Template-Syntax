@@ -4,23 +4,29 @@ import { GuardsComponent } from './guards.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { UnauthComponent } from './components/unauth/unauth.component';
 import { RoleComponent } from './components/role/role.component';
+import { AuthGuard,UnauthGuard,RoleGuard, Roles } from '../../../../guards';
 
 const routes: Routes = [
   {
     path:'', 
     component: GuardsComponent,
+    // canActivateChild: [AuthGuard],
     children: [
       {
         path: 'auth',
-        component:AuthComponent
+        component:AuthComponent,
+        canActivate: [AuthGuard]
       },
       {
         path:'unauth',
-        component:UnauthComponent
+        component:UnauthComponent,
+        canActivate: [UnauthGuard]
       },
       {
         path:'role',
-        component:RoleComponent
+        component:RoleComponent,
+        canActivate: [AuthGuard, RoleGuard],
+        data: { roles: [Roles.Recruiter]}
       }
     ]
   }
